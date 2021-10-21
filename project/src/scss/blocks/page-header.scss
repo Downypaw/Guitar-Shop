@@ -1,0 +1,78 @@
+.page-header__content {
+  background-color: $block-color;
+  padding-top: 20px;
+  min-height: 110px;
+  box-sizing: border-box;
+}
+
+.page-header__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.page-header__right {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 27px;
+}
+
+.page-header__extra-link {
+  width: 48px;
+  height: 48px;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  padding: 0 13px;
+
+  &:hover .page-header__icon--location path {
+    stroke: $text-hover-color;
+  }
+
+  &:hover .page-header__icon--search path,
+  &:hover .page-header__icon--cart path {
+    fill: $text-hover-color;
+  }
+
+  &:active .page-header__icon--location path,
+  &:focus .page-header__icon--location path {
+    stroke: $text-hover-color;
+    opacity: 0.5;
+  }
+
+  &:active .page-header__icon--search path,
+  &:active .page-header__icon--cart path,
+  &:focus .page-header__icon--search path,
+  &:focus .page-header__icon--cart path {
+    fill: $text-hover-color;
+    opacity: 0.5;
+  }
+}
+
+.page-header__left--active:hover {
+  opacity: 0.5;
+}
+
+.page-header__left--active:active,
+.page-header__left--active:focus {
+  border: 1px solid $text-color;
+}
+
+.page-header {
+  box-sizing: border-box;
+  min-height: 322px;
+  background: url("../../img/guitar-string.svg") 50% 54% no-repeat;
+  background-size: 100% auto;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 823px;
+    height: 290px;
+    background: url("../../img/guitar-header.webp");
+    z-index: 10;
+  }
+}

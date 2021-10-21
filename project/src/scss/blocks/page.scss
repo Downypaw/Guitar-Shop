@@ -1,0 +1,19 @@
+.page {
+  height: 100%;
+}
+
+.page__body {
+  height: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: "Droid Sans", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: $text-color;
+  background-color: $basic-color;
+  min-width: 1020px;
+}
+
+.page__body--unactive {
+  overflow: hidden;
+}

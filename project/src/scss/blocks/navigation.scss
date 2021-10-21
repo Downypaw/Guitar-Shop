@@ -1,0 +1,29 @@
+.navigation  {
+  margin-top: 15px;
+  margin-right: 33px;
+}
+
+.navigation__list {
+  display: flex;
+  flex-wrap: wrap;
+  @include list;
+}
+
+.navigation__link {
+  color: $text-color;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    color: $text-hover-color;
+  }
+
+  &:active,
+  &:focus {
+    color: $text-click-color;
+  }
+}
+
+.navigation__item {
+  padding: 10px 22px;
+}
