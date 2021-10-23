@@ -1,0 +1,239 @@
+.page-footer {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+.page-footer__container {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr 1fr 1fr;
+}
+
+.page-footer__about,
+.page-footer__catalog,
+.page-footer__information,
+.page-footer__contacts {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  color: $basic-color;
+}
+
+.page-footer__left {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.page-footer__content {
+  background-color: $footer-color;
+  min-height: 273px;
+  box-sizing: border-box;
+  padding-top: 60px;
+}
+
+.page-main {
+  min-height: 100%;
+}
+
+
+.page-footer {
+  padding-top: 79px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 371px;
+    height: 79px;
+    background: url("../../img/guitar.webp") no-repeat 100% -202px;
+    background-size: 823px 290px;
+    top: 0;
+    transform: rotate(180deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 6px;
+    background-color: $footer-color;
+    top: 63px;
+  }
+}
+
+.page-footer__about {
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: normal;
+  width: 135px;
+  padding-left: 55px;
+  padding-top: 10px;
+}
+
+.page-footer__catalog {
+  padding-left: 22px;
+
+  .page-footer__title {
+    margin-top: 20px;
+  }
+}
+
+.page-footer__catalog-list,
+.page-footer__information-list, {
+  @include list;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.page-footer__catalog-item {
+  margin-bottom: 7px;
+}
+
+.page-footer__information-item {
+  margin-bottom: 8px;
+}
+
+.page-footer__information {
+  .page-footer__title {
+    margin-top: 20px;
+  }
+}
+
+.page-footer__contacts {
+  font-size: 10px;
+  line-height: 12px;
+  padding-left: 47px;
+  letter-spacing: 0.1em;
+  width: 123px;
+
+  .page-footer__title {
+    margin-top: 25px;
+  }
+}
+
+.page-footer__catalog-link,
+.page-footer__information-link, {
+  color: $basic-color;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+
+  &:hover {
+    color: $bright-color;
+  }
+
+  &:active,
+  &:focus {
+    color: $bright-color;
+  }
+}
+
+.page-footer__title {
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+}
+
+.page-footer__socials {
+  @include list;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-footer__paragraph {
+  margin-top: 13px;
+}
+
+.page-footer__socials-item {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.page-footer__socials-item {
+  margin-right: 24px;
+}
+
+.page-footer__socials-link:hover::before {
+  opacity: 0.7;
+}
+
+.page-footer__socials-link:active:active,
+.page-footer__socials-link:focus:focus {
+  opacity: 0.5;
+}
+
+.page-footer__socials-link--facebook::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: url("../../img/icon-facebook.svg");
+}
+
+.page-footer__socials-link--instagram::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: url("../../img/icon-instagram.svg");
+}
+
+.page-footer__socials-link--twitter::before {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: url("../../img/icon-twitter.svg");
+}
+
+.page-footer__phone {
+  color: $basic-color;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  padding-left: 15px;
+
+  &:hover {
+    color: $bright-color;
+  }
+
+  &:active,
+  &:focus {
+    color: $bright-color;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 9px;
+    background: url("../../img/icon-phone.svg");
+    left: 0;
+    top: 2px;
+  }
+}
+
+.page-footer__phone:hover::before {
+  opacity: 0.7;
+}
+
+.page-footer__phone:hover:active,
+.page-footer__phone:hover:focus {
+  opacity: 0.5;
+}
+
+.page-footer__clock {
+  position: relative;
+  display: inline-block;
+  padding-left: 15px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background: url("../../img/icon-clock.svg");
+    left: 0;
+    top: 2px;
+  }
+}
