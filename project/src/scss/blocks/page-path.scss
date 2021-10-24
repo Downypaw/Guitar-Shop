@@ -1,0 +1,34 @@
+.page-path {
+  @include list;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.page-path__item {
+  margin-right: 35px;
+  position: relative;
+
+  &:not(:last-of-type)::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: url("../../img/icon-arrow.svg");
+    right: -25px;
+    top: 3px;
+  }
+}
+
+.page-path__link {
+  font-size: 16px;
+  letter-spacing: 0.05em;
+
+  &:hover {
+    color: $bright-color
+  }
+
+  &:active,
+  &:focus {
+    color: $bright-color-active;
+  }
+}

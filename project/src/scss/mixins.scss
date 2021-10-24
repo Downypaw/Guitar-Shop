@@ -3,3 +3,40 @@
   margin: 0;
   list-style: none;
 }
+
+@mixin default-button {
+  border: none;
+  background-color: $button-color;
+  text-align: center;
+  color: $basic-color;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $hovered-button-color;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $checkbox-color;
+  }
+}
+
+@mixin bright-button {
+  border: none;
+  background-color: $bright-color;
+  color: $basic-color;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $hovered-button-color;
+  }
+
+  &:active,
+  &:focus {
+    background-color: $checkbox-color;
+  }
+}

@@ -5,7 +5,7 @@
 
 .page-footer__container {
   display: grid;
-  grid-template-columns: 1fr auto 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .page-footer__about,
@@ -28,7 +28,7 @@
   background-color: $footer-color;
   min-height: 273px;
   box-sizing: border-box;
-  padding-top: 60px;
+  padding-top: 61px;
 }
 
 .page-main {
@@ -37,16 +37,15 @@
 
 
 .page-footer {
-  padding-top: 79px;
+  padding-top: 78px;
   position: relative;
+  letter-spacing: 0.01em;
 
   &::before {
     content: "";
     position: absolute;
     width: 371px;
     height: 79px;
-    background: url("../../img/guitar.webp") no-repeat 100% -202px;
-    background-size: 823px 290px;
     top: 0;
     transform: rotate(180deg);
   }
@@ -61,17 +60,27 @@
   }
 }
 
+.webp .page-footer::before {
+  background: url("../../img/guitar.webp") no-repeat 100% -202px;
+  background-size: 823px 290px;
+}
+
+.no-webp .page-footer::before {
+  background: url("../../img/guitar.png") no-repeat 100% -202px;
+  background-size: 823px 290px;
+}
+
 .page-footer__about {
   font-size: 10px;
   line-height: 12px;
   font-weight: normal;
   width: 135px;
-  padding-left: 55px;
+  padding-left: 53px;
   padding-top: 10px;
 }
 
 .page-footer__catalog {
-  padding-left: 22px;
+  padding-left: 25px;
 
   .page-footer__title {
     margin-top: 20px;
@@ -86,7 +95,7 @@
 }
 
 .page-footer__catalog-item {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
 
 .page-footer__information-item {
@@ -102,8 +111,8 @@
 .page-footer__contacts {
   font-size: 10px;
   line-height: 12px;
-  padding-left: 47px;
-  letter-spacing: 0.1em;
+  padding-left: 48px;
+  letter-spacing: 0.11em;
   width: 123px;
 
   .page-footer__title {
@@ -123,7 +132,7 @@
 
   &:active,
   &:focus {
-    color: $bright-color;
+    color: $bright-color-active;
   }
 }
 
@@ -137,10 +146,16 @@
   @include list;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .page-footer__paragraph {
-  margin-top: 13px;
+  margin-top: 18px;
+  min-width: 140px;
+}
+
+.page-footer__paragraph:last-of-type {
+  margin-top: 11px;
 }
 
 .page-footer__socials-item {
