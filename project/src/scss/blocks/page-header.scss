@@ -76,3 +76,11 @@
     z-index: 10;
   }
 }
+
+.webp .page-header::before {
+  background: url("../../img/guitar.webp");
+}
+
+.no-webp .page-header::before {
+  background: url("../../img/guitar.png");
+}

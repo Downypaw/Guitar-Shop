@@ -1,0 +1,111 @@
+.filter {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.filter__title,
+.filter__group-title {
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+.filter__group-title {
+  padding-left: 0;
+  margin-bottom: 23px;
+}
+
+.filter__group {
+  border: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 31px;
+  border-top: 1px solid $block-color;
+  padding-bottom: 30px;
+}
+
+.filter__group:nth-of-type(2) {
+  padding-bottom: 15px;
+}
+
+.filter__form {
+  margin-top: 28px;
+}
+
+.filter__currency {
+  font-size: 15px;
+}
+
+.filter__price-input {
+  height: 28px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 18px;
+
+  &::placeholder {
+    color: lighten($text-color, .6);
+    font-size: 14px;
+  }
+}
+
+.filter__price-wrapper {
+  display: inline-block;
+  width: 40.38%;
+}
+
+.filter__price-wrapper:not(:last-of-type) {
+  position: relative;
+  margin-right: 40px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 0.5px;
+    background-color: $text-color;
+    right: -27px;
+    top: 13px;
+  }
+}
+
+.filter__type-list {
+  @include list;
+  padding-top: 2px;
+  font-size: 16px;
+  padding-left: 40px;
+  letter-spacing: 0.03em;
+}
+
+.filter__type-item {
+  margin-bottom: 16px;
+}
+
+.filter__type-checkbox + .filter__type-label {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 1px solid $checkbox-color;
+    border-radius: 4px;
+    left: -40px;
+    box-sizing: border-box;
+  }
+}
+
+.filter__type-checkbox:checked + .filter__type-label {
+  position: relative;
+
+  &::before {
+    background: url("../../img/icon-check.svg") 50% 50% no-repeat;
+  }
+}
+
+.filter__submit {
+  @include default-button;
+  min-width: 57.69%;
+  min-height: 30px;
+  text-transform: uppercase;
+}

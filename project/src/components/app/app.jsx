@@ -1,15 +1,14 @@
 import React from 'react';
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import MainPageScreen from '../main-page/main-page';
+import CartScreen from '../cart/cart';
 
-const CartScreen = React.lazy(() => import('../cart/cart'));
-
-export default function App() {
+export default function App({guitars}) {
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path='/'>
-          <MainPageScreen />
+          <MainPageScreen guitars={guitars}/>
         </Route>
         <Route exact path='/cart'>
           <CartScreen />

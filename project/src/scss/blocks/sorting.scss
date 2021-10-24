@@ -1,0 +1,98 @@
+.sorting {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 13px;
+}
+
+.sorting__list,
+.sorting__direction {
+  @include list;
+  display: flex;
+}
+
+.sorting__list-item {
+  font-size: 16px;
+  color: $hovered-button-color;
+  margin-left: 13px;
+  letter-spacing: 0.09em;
+  padding: 17px 9px;
+  cursor: pointer;
+
+  &:hover {
+    color: $bright-color;
+  }
+
+  &:active,
+  &:focus {
+    color: darken($hovered-button-color, 20%);
+  }
+}
+
+.sorting__block-wrapper {
+  display: flex;
+}
+
+.sorting__direction-button {
+  width: 22px;
+  height: 22px;
+  margin-top: 16px;
+  border: none;
+  background-color: transparent;
+}
+
+.sorting__direction-type:first-of-type {
+  margin-right: 14px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0;
+  	height: 0;
+  	border-left: 6px solid transparent;
+  	border-right: 6px solid transparent;
+  	border-bottom: 10px solid $sorting-button-color;
+    top: 22px;
+    left: 5px;
+  }
+
+  &:hover::before {
+  	border-bottom: 10px solid $bright-color;
+  }
+
+  &:active::before,
+  &:focus::before {
+  	border-bottom: 10px solid $text-color;
+  }
+}
+
+.sorting__direction-type:last-of-type {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 0;
+  	height: 0;
+  	border-left: 6px solid transparent;
+  	border-right: 6px solid transparent;
+  	border-top: 10px solid $sorting-button-color;
+    top: 22px;
+    left: 5px;
+  }
+
+  &:hover::before {
+  	border-top: 10px solid $bright-color;
+  }
+
+  &:active::before,
+  &:focus::before {
+  	border-top: 10px solid $text-color;
+  }
+}
+
+
+.sorting__direction {
+  margin-right: 9px;
+}
