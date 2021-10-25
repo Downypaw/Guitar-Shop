@@ -1,0 +1,77 @@
+.cart-ordering {
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 92px;
+}
+
+.cart-ordering__title {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  margin-bottom: 0;
+}
+
+.cart-ordering__text {
+  font-size: 12px;
+  letter-spacing: 0.07em;
+  margin-top: 5px;
+  margin-bottom: 16px;
+}
+
+.cart-ordering__form-input {
+  min-width: 170px;
+  width: 40%;
+  height: 36px;
+  border: 2px solid $block-color;
+  box-sizing: border-box;
+  font-size: 16px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Droid Sans", "Arial", sans-serif;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+  margin-right: 35px;
+
+  &:hover {
+    border-color: lighten($hovered-button-color, 70%);
+  }
+
+  &:active,
+  &:focus {
+    border-color: lighten($hovered-button-color, 40%);
+  }
+}
+
+.cart-ordering__form-submit {
+  @include default-button;
+  border-radius: 2px;
+  min-width: 200px;
+  width: 45%;
+  height: 36px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-family: "Droid Sans", "Arial", sans-serif;
+  text-align: center;
+}
+
+.cart-ordering__total {
+  font-weight: bold;
+  font-size: 20px;
+  display: block;
+  letter-spacing: 0.05em;
+  margin-right: 5px;
+  margin-top: 20px;
+  margin-left: 25%;
+}
+
+.cart-ordering__order-submit {
+  @include bright-button;
+  min-width: 220px;
+  height: 36px;
+  font-size: 16px;
+  letter-spacing: 0.09em;
+  font-family: "Droid Sans", "Arial", sans-serif;
+  margin-top: 43px;
+}
