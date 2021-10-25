@@ -33,9 +33,9 @@ export default function Header({page}) {
           <nav className="navigation">
             <ul className="navigation__list">
               <li className="navigation__item">
-                <a className="navigation__link" href="#">
+                <Link className="navigation__link" to="/">
                   Каталог
-                </a>
+                </Link>
               </li>
               <li className="navigation__item">
                 <a className="navigation__link" href="#">

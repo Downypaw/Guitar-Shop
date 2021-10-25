@@ -1,0 +1,140 @@
+.cart-list {
+  @include list;
+  padding-top: 28px;
+}
+
+.cart-list__item {
+  border-top: 1px solid $block-color;
+  padding-top: 20px;
+  display: flex;
+  padding-bottom: 14px;
+}
+
+.cart-list__item-delete {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  background: transparent;
+  border: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: $block-color;
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: $block-color;
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    background: $bright-color;
+  }
+
+  &:focus:before,
+  &:focus:after,
+  &:active:before,
+  &:active:after {
+    background: $bright-color-active;
+  }
+}
+
+.cart-list__image {
+  margin-left: 27px;
+}
+
+.cart-list__item-name {
+  margin-top: 0;
+  letter-spacing: 0.02em;
+  min-width: 270px;
+  margin-bottom: 5px;
+}
+
+.cart-list__group {
+  display: flex;
+  flex-direction: column;
+  padding-left: 68px;
+  font-size: 14px;
+  letter-spacing: 0.07em;
+}
+
+.cart-list__item-code {
+  margin-bottom: 3px;
+}
+
+.cart-list__item-price {
+  font-size: 20px;
+  margin-left: 85px;
+  margin-top: 55px;
+}
+
+.cart-list__controls {
+  @include list;
+  display: flex;
+  margin-left: 100px;
+  margin-top: 20px;
+}
+
+.cart-list__control-button {
+  border: none;
+  width: 28px;
+  height: 30px;
+  background: transparent;
+  border-top: 1px solid $checkbox-color;
+  border-bottom: 1px solid $checkbox-color;
+  font-size: 16px;
+  color: $checkbox-color;
+
+  &:hover {
+    border-color: $bright-color;
+    color: $bright-color;
+  }
+
+  &:focus,
+  &:active {
+    border-color: 1px solid $bright-color-active;
+    color: $bright-color-active;;
+  }
+}
+
+.cart-list__control {
+  &:first-of-type .cart-list__control-button,
+  &:last-of-type .cart-list__control-button {
+    border-left: 1px solid $checkbox-color;
+    border-right: 1px solid $checkbox-color;
+  }
+
+  &:first-of-type .cart-list__control-button:hover,
+  &:last-of-type .cart-list__control-button:hover {
+    border-color: $bright-color;
+  }
+
+  &:first-of-type .cart-list__control-button:active,
+  &:first-of-type .cart-list__control-button:focus,
+  &:last-of-type .cart-list__control-button:active,
+  &:last-of-type .cart-list__control-button:focus {
+    border-color: $bright-color-active;
+  }
+}
+
+.cart-list__total {
+  font-size: 20px;
+  font-weight: bold;
+  margin-left: 80px;
+  margin-top: 55px;
+}
+
+.cart-list__item:last-of-type {
+  border-bottom: 1px solid $block-color;
+}
