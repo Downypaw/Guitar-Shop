@@ -1,0 +1,103 @@
+.popup-purchase {
+  @include popup;
+}
+
+.popup-purchase__modal {
+  @include modal;
+  width: 72.55%;
+  min-height: 230px;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+.popup-purchase__wrapper {
+  width: 90.14%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.popup-purchase__close {
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: $checkbox-color;
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: $checkbox-color;
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    background: $bright-color;
+  }
+
+  &:focus:before,
+  &:focus:after,
+  &:active:before,
+  &:active:after {
+    background: $bright-color-active;
+  }
+}
+
+.popup-purchase__title {
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.popup-purchase__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popup-purchase__information {
+  margin-left: 47px;
+}
+
+.popup-purchase__item-name {
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.popup-purchase__item-code,
+.popup-purchase__features,
+.popup-purchase__price {
+  display: block;
+  letter-spacing: 0.08em;
+}
+
+.popup-purchase__adding {
+  @include bright-button;
+  min-width: 220px;
+  height: 46px;
+  margin-left: 18.5%;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  letter-spacing: 0.08em;
+}
+
+.popup-purchase__price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
