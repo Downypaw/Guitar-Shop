@@ -1,0 +1,245 @@
+[
+  {
+    "code": "SO757575",
+    "name": "Честер Bass",
+    "type": "электрогитара",
+    "popularity": 15,
+    "stringNumber": 7,
+    "price": 17500,
+    "img": "img/guitar-1"
+  },
+  {
+    "code": "TK129049",
+    "name": "СURT Z300",
+    "type": "электрогитара",
+    "popularity": 9,
+    "stringNumber": 7,
+    "price": 29500,
+    "img": "img/guitar-2"
+  },
+  {
+    "code": "RO111111",
+    "name": "Roman LX",
+    "type": "укулеле",
+    "popularity": 21,
+    "stringNumber": 4,
+    "price": 6800,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "TK436457",
+    "name": "СURT T300",
+    "type": "электрогитара",
+    "popularity": 15,
+    "stringNumber": 6,
+    "price": 30000,
+    "img": "img/guitar-4"
+  },
+  {
+    "code": "DI192138",
+    "name": "Dania Super",
+    "type": "акустическая гитара",
+    "popularity": 5,
+    "stringNumber": 7,
+    "price": 3500,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "SO934345",
+    "name": "Честер WX",
+    "type": "электрогитара",
+    "popularity": 17,
+    "stringNumber": 6,
+    "price": 15300,
+    "img": "img/guitar-1"
+  },
+  {
+    "code": "DI082347",
+    "name": "Dania VX",
+    "type": "укулеле",
+    "popularity": 5,
+    "stringNumber": 4,
+    "price": 2200,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "SO135646",
+    "name": "Честер Plus",
+    "type": "электрогитара",
+    "popularity": 27,
+    "stringNumber": 4,
+    "price": 30000,
+    "img": "img/guitar-6"
+  },
+  {
+    "code": "VO154751",
+    "name": "Виолана 300",
+    "type": "акустическая гитара",
+    "popularity": 3,
+    "stringNumber": 7,
+    "price": 1700,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "TK244556",
+    "name": "СURT Clasic",
+    "type": "электрогитара",
+    "popularity": 20,
+    "stringNumber": 4,
+    "price": 23000,
+    "img": "img/guitar-1"
+  },
+  {
+    "code": "TK134663",
+    "name": "СURT Z250",
+    "type": "электрогитара",
+    "popularity": 19,
+    "stringNumber": 4,
+    "price": 18700,
+    "img": "img/guitar-1"
+  },
+  {
+    "code": "SO123212",
+    "name": "Честер 7X",
+    "type": "электрогитара",
+    "popularity": 30,
+    "stringNumber": 7,
+    "price": 35000,
+    "img": "img/guitar-1"
+  },
+  {
+    "code": "SO123234",
+    "name": "Честер 6V",
+    "type": "электрогитара",
+    "popularity": 28,
+    "stringNumber": 6,
+    "price": 14900,
+    "img": "img/guitar-1"
+  },
+  {
+    "code": "VO519510",
+    "name": "Виолана Mix",
+    "type": "акустическая гитара",
+    "popularity": 7,
+    "stringNumber": 6,
+    "price": 7600,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "VO457369",
+    "name": "Виолана 250x",
+    "type": "акустическая гитара",
+    "popularity": 19,
+    "stringNumber": 6,
+    "price": 6500,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "FB625903",
+    "name": "Фабио Лайт",
+    "type": "акустическая гитара",
+    "popularity": 26,
+    "stringNumber": 7,
+    "price": 12000,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "FB576948",
+    "name": "Фабио L100",
+    "type": "акустическая гитара",
+    "popularity": 31,
+    "stringNumber": 7,
+    "price": 9900,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "LU012032",
+    "name": "Liana Z200",
+    "type": "акустическая гитара",
+    "popularity": 28,
+    "stringNumber": 12,
+    "price": 8900,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "LU546853",
+    "name": "Liana Z100",
+    "type": "акустическая гитара",
+    "popularity": 34,
+    "stringNumber": 12,
+    "price": 10500,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "LU458283",
+    "name": "Liana Z300",
+    "type": "акустическая гитара",
+    "popularity": 9,
+    "stringNumber": 6,
+    "price": 13300,
+    "img": "img/guitar-5"
+  },
+  {
+    "code": "RO324341",
+    "name": "Roman RX",
+    "type": "укулеле",
+    "popularity": 37,
+    "stringNumber": 4,
+    "price": 4800,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "RO214235",
+    "name": "Roman TX",
+    "type": "укулеле",
+    "popularity": 5,
+    "stringNumber": 4,
+    "price": 1900,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "DI132414",
+    "name": "Dania U100",
+    "type": "укулеле",
+    "popularity": 23,
+    "stringNumber": 4,
+    "price": 2500,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "DI934754",
+    "name": "Dania WR",
+    "type": "укулеле",
+    "popularity": 3,
+    "stringNumber": 4,
+    "price": 3800,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "DI034292",
+    "name": "Dania LE",
+    "type": "укулеле",
+    "popularity": 10,
+    "stringNumber": 4,
+    "price": 4100,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "MI193214",
+    "name": "Mirana V10",
+    "type": "укулеле",
+    "popularity": 14,
+    "stringNumber": 4,
+    "price": 2700,
+    "img": "img/guitar-3"
+  },
+  {
+    "code": "VO043244",
+    "name": "Виолана Mini",
+    "type": "укулеле",
+    "popularity": 29,
+    "stringNumber": 4,
+    "price": 6700,
+    "img": "img/guitar-3"
+  }
+]

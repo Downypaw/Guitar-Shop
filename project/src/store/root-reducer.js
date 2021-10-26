@@ -1,7 +1,11 @@
 import {combineReducers} from 'redux';
-import {appInteraction} from './app-interaction/app-interaction';
+import {appBusinessLogic} from './app-business-logic/app-business-logic';
+import {appData} from './app-data/app-data';
+import {appPopup} from './app-popup/app-popup';
 import {ReducerName} from '../const';
 
 export default combineReducers({
-  [ReducerName.INTERACTION]: appInteraction,
+  [ReducerName.BUSINESS_LOGIC]: appBusinessLogic,
+  [ReducerName.DATA]: appData,
+  [ReducerName.POPUP]: appPopup,
 });

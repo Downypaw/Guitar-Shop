@@ -1,10 +1,14 @@
 import React, {useState} from 'react';
 import Card from '../card/card';
+import {useSelector} from 'react-redux';
+import {getCatalogItems} from '../../store/app-data/selectors';
 import {guitars} from '../../mock';
 import {ITEMS_COUNT_ON_PAGE, START_PAGE} from '../../const';
 
-export default function ProductList() {
+export default function Catalog() {
   const [activePage, setActivePage] = useState(1);
+
+  const guitars = useSelector(getCatalogItems);
 
   const handlePageButtonClick = (evt) => {
     setActivePage(evt.target.value);
@@ -15,7 +19,7 @@ export default function ProductList() {
       <ul className="catalog__product-list">
         {
           [...guitars.slice((activePage - 1) * ITEMS_COUNT_ON_PAGE, activePage * ITEMS_COUNT_ON_PAGE)]
-            .map((guitar) => <Card key={guitar.id} guitar={guitar}/>)
+            .map((guitar) => <Card key={guitar.code} guitar={guitar}/>)
         }
       </ul>
       <ul className="catalog__buttons-list">

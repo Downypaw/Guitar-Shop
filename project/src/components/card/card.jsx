@@ -51,7 +51,7 @@ export default function Card({guitar}) {
 }
 
 Card.propTypes = PropTypes.shape({
-  id: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   popularity: PropTypes.number.isRequired,
