@@ -7,7 +7,7 @@ import Footer from '../footer/footer';
 import PopupPurchase from '../popup-purchase/popup-purchase';
 import PopupNotification from '../popup-notification/popup-notification';
 import {useSelector} from 'react-redux';
-import {getPopupPurchaseStatus, getPopupNotificationStatus} from '../../store/app-interaction/selectors';
+import {getPopupPurchaseStatus, getPopupNotificationStatus} from '../../store/app-popup/selectors';
 import {AppRoute} from '../../const.js';
 
 export default function MainPage() {

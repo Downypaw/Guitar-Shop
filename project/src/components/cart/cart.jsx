@@ -26,7 +26,7 @@ export default function Cart() {
           </ul>
 
           <ul className="cart-list">
-            {guitars.slice(0, 2).map((item) => <CartItem key={item.id} item={item}/>)}
+            {guitars.slice(0, 2).map((item) => <CartItem key={item.code} item={item}/>)}
           </ul>
 
           <div className="cart-ordering">

@@ -10,7 +10,9 @@ export const ITEMS_COUNT_ON_PAGE = 9;
 export const START_PAGE = 1;
 
 export const ReducerName = {
-  INTERACTION: 'INTERACTION',
+  BUSINESS_LOGIC: 'BUSSINES_LOGIC',
+  DATA: 'DATA',
+  POPUP: 'POPUP',
 };
 
 export const InstrumentType = {

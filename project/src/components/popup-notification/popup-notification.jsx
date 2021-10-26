@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
 import {useDispatch} from 'react-redux';
-import {getSelectedItem} from '../../store/app-interaction/selectors';
+import {getSelectedItem} from '../../store/app-business-logic/selectors';
 import {setPopupPurchaseStatus, setPopupNotificationStatus} from '../../store/action';
 import {AppRoute} from '../../const.js';
 import {onOverlayClick} from '../../util';

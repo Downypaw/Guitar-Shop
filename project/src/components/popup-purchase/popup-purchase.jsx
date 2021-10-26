@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getSelectedItem} from '../../store/app-interaction/selectors';
+import {getSelectedItem} from '../../store/app-business-logic/selectors';
 import {setPopupPurchaseStatus, setPopupNotificationStatus} from '../../store/action';
 import {InstrumentType} from '../../const';
 import {onOverlayClick} from '../../util';
