@@ -1,0 +1,99 @@
+.popup-notification {
+  @include popup;
+}
+
+.popup-notification__modal {
+  @include modal;
+  width: 72.55%;
+  min-height: 185px;
+  padding-top: 5px;
+  padding-left: 15px;
+}
+
+.popup-notification__wrapper {
+  width: 90.14%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.popup-notification__close {
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  width: 18px;
+  height: 18px;
+  background: transparent;
+  border: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: $checkbox-color;
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: $checkbox-color;
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  &:hover:before,
+  &:hover:after {
+    background: $bright-color;
+  }
+
+  &:focus:before,
+  &:focus:after,
+  &:active:before,
+  &:active:after {
+    background: $bright-color-active;
+  }
+}
+
+.popup-notification__message {
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.popup-notification__transition {
+  @include bright-button;
+  min-width: 220px;
+  height: 46px;
+  margin-left: 80px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  letter-spacing: 0.08em;
+}
+
+.popup-notification__continuation {
+  border: none;
+  border: 1px solid $hovered-button-color;
+  background: $basic-color;
+  color: $hovered-button-color;
+  min-width: 220px;
+  height: 46px;
+  margin-left: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+  letter-spacing: 0.1em;
+  font-family: "Droid Sans", "Arial", sans-serif;
+
+  &:hover {
+    border: 1px solid $text-color;
+  }
+
+  &:active,
+  &:focus {
+    opacity: 0.5;
+  }
+}

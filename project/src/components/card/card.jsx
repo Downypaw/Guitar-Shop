@@ -1,8 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {DEFAULT_RATING} from '../../const';
+import {onEscKeyDown} from '../../util';
+import {useDispatch} from 'react-redux';
+import {setPopupPurchaseStatus, setPopupNotificationStatus, setSelectedItem} from '../../store/action';
 
 export default function Card({guitar}) {
+  const dispatch = useDispatch();
+  const bodyElement = document.querySelector('body');
+
+  const handleEscKeydown = (evt) => {
+    dispatch(setPopupPurchaseStatus(false));
+    dispatch(setPopupNotificationStatus(false));
+  }
+
+  const handlePurchaseButtonClick = () => {
+    dispatch(setSelectedItem(guitar));
+    dispatch(setPopupPurchaseStatus(true));
+    document.addEventListener('keydown', (evt) => onEscKeyDown(evt, handleEscKeydown));
+  }
+
   return (
     <li className="card">
       <picture className="card__picture">
@@ -23,7 +40,12 @@ export default function Card({guitar}) {
         <span className="card__guitar-price">{guitar.price} ₽</span>
       </div>
       <button className="card__more-information">Подробнее</button>
-      <button className="card__purchase">Купить</button>
+      <button
+        className="card__purchase"
+        onClick={handlePurchaseButtonClick}
+      >
+        Купить
+      </button>
     </li>
   );
 }

@@ -8,7 +8,7 @@ export default function Header({page}) {
 
   const handleLogoClick = () => {
     if (page !== AppRoute.INDEX) {
-      history.push('/');
+      history.push(AppRoute.INDEX);
     }
   }
 

@@ -4,9 +4,17 @@ import Filter from '../filter/filter';
 import Sorting from '../sorting/sorting';
 import Catalog from '../catalog/catalog';
 import Footer from '../footer/footer';
+import PopupPurchase from '../popup-purchase/popup-purchase';
+import PopupNotification from '../popup-notification/popup-notification';
+import {useSelector} from 'react-redux';
+import {getPopupPurchaseStatus, getPopupNotificationStatus} from '../../store/app-interaction/selectors';
 import {AppRoute} from '../../const.js';
 
 export default function MainPage() {
+
+  const isPopupPurchaseActive = useSelector(getPopupPurchaseStatus);
+  const isPopupNotificationActive = useSelector(getPopupNotificationStatus);
+
   return (
     <>
       <Header page={AppRoute.INDEX}/>
@@ -30,6 +38,8 @@ export default function MainPage() {
         </div>
       </main>
       <Footer page={AppRoute.INDEX}/>
+      {isPopupPurchaseActive && <PopupPurchase />}
+      {isPopupNotificationActive && <PopupNotification />}
     </>
   );
 }
