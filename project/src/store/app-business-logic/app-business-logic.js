@@ -1,9 +1,11 @@
 import {createReducer} from '@reduxjs/toolkit';
-import {setSelectedItem, setItemsInCart, deleteItemInCart} from '../action';
+import {setSelectedItem, setItemsInCart, deleteItemInCart, setActiveSortOption, setActiveSortDirection} from '../action';
 
 const initialState = {
   selectedItem: {},
   itemsInCart: [],
+  activeSortOption: '',
+  activeSortDirection: '',
 };
 
 const appBusinessLogic = createReducer(initialState, (builder) => {
@@ -16,6 +18,12 @@ const appBusinessLogic = createReducer(initialState, (builder) => {
     })
     .addCase(deleteItemInCart, (state, action) => {
       state.itemsInCart = [...state.itemsInCart.slice(0, action.payload - 1), ...state.itemsInCart.slice(action.payload + 1)];
+    })
+    .addCase(setActiveSortOption, (state, action) => {
+      state.activeSortOption = action.payload;
+    })
+    .addCase(setActiveSortDirection, (state, action) => {
+      state.activeSortDirection = action.payload;
     });
 });
 
