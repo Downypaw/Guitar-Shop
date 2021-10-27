@@ -25,7 +25,7 @@
 
   &:active,
   &:focus {
-    color: darken($hovered-button-color, 20%);
+    color: $text-color;
   }
 }
 
@@ -92,6 +92,21 @@
   }
 }
 
+.sorting__direction-type--active:first-of-type {
+  &::before {
+    border-bottom: 10px solid $text-color;
+  }
+}
+
+.sorting__direction-type--active:last-of-type {
+  &::before {
+    border-top: 10px solid $text-color;
+  }
+}
+
+.sorting__option--active {
+  color: $text-color;
+}
 
 .sorting__direction {
   margin-right: 9px;

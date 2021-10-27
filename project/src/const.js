@@ -19,3 +19,13 @@ export const InstrumentType = {
   GUITAR: 'Гитара',
   UKULELE: 'Укулеле',
 }
+
+export const SortType = {
+  PRICE: 'price',
+  POPULARITY: 'popularity',
+}
+
+export const SortDirection = {
+  ASCENDING: 'ASCENDING',
+  DESCENDING: 'DESCENDING',
+}
