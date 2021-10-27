@@ -37,7 +37,7 @@ export default function Card({guitar}) {
       </div>
       <div className="card__main-information">
         <span className="card__guitar-name">{guitar.name}</span>
-        <span className="card__guitar-price">{guitar.price} ₽</span>
+        <span className="card__guitar-price">{guitar.price.toLocaleString()} ₽</span>
       </div>
       <button className="card__more-information">Подробнее</button>
       <button

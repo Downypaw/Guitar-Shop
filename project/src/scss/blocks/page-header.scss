@@ -84,3 +84,15 @@
 .no-webp .page-header::before {
   background: url("../../img/guitar.png");
 }
+
+.page-header__extra-link {
+  position: relative;
+}
+
+.page-header__cart-counter {
+  position: absolute;
+  font-size: 10px;
+  color: $count-color;
+  top: -5px;
+  right: 12px;
+}

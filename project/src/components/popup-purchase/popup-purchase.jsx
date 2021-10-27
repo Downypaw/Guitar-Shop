@@ -1,7 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {getSelectedItem} from '../../store/app-business-logic/selectors';
-import {setPopupPurchaseStatus, setPopupNotificationStatus} from '../../store/action';
+import {setPopupPurchaseStatus, setPopupNotificationStatus, setItemsInCart} from '../../store/action';
 import {InstrumentType} from '../../const';
 import {onOverlayClick} from '../../util';
 
@@ -12,6 +12,7 @@ export default function PopupPurchase() {
   const dispatch = useDispatch();
 
   const handleAddingButtonClick = () => {
+    dispatch(setItemsInCart(selectedItem));
     dispatch(setPopupPurchaseStatus(false));
     dispatch(setPopupNotificationStatus(true));
   }
@@ -46,7 +47,7 @@ export default function PopupPurchase() {
               <span className="popup-purchase__features">
                 {selectedItem.type[0].toUpperCase() + selectedItem.type.slice(1)}, {selectedItem.stringNumber} струнная
                 </span>
-              <span className="popup-purchase__price">Цена: {selectedItem.price} ₽</span>
+              <span className="popup-purchase__price">Цена: {selectedItem.price.toLocaleString()} ₽</span>
             </div>
             <button
               className="popup-purchase__adding"
