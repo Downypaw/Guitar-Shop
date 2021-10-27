@@ -33,7 +33,10 @@ export default function PopupNotification() {
           <div className="popup-notification__controls">
             <button
               className="popup-notification__transition"
-              onClick={() => history.push(AppRoute.CART)}
+              onClick={() => {
+                dispatch(setPopupNotificationStatus(false));
+                history.push(AppRoute.CART);
+              }}
             >
               Перейти в корзину
             </button>

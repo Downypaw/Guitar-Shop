@@ -2,9 +2,12 @@ import React from 'react';
 import {useHistory, Link} from "react-router-dom";
 import {AppRoute} from '../../const.js';
 import PropTypes from 'prop-types';
+import {useSelector} from 'react-redux';
+import {getItemsInCart} from '../../store/app-business-logic/selectors';
 
 export default function Header({page}) {
   let history = useHistory();
+  const itemsInCart = useSelector(getItemsInCart);
 
   const handleLogoClick = () => {
     if (page !== AppRoute.INDEX) {
@@ -79,6 +82,7 @@ export default function Header({page}) {
               <span className="visually-hidden">
                 Корзина
               </span>
+                {itemsInCart.length > 0 && <span className="page-header__cart-counter">{itemsInCart.length}</span>}
             </Link>
           </div>
         </div>

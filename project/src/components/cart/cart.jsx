@@ -2,10 +2,17 @@ import React from 'react';
 import Header from '../header/header';
 import CartItem from '../cart-item/cart-item';
 import Footer from '../footer/footer';
+import PopupDeleting from '../popup-deleting/popup-deleting';
 import {AppRoute} from '../../const.js';
-import {guitars} from '../../mock';
+import {useSelector} from 'react-redux';
+import {getPopupDeletingStatus} from '../../store/app-popup/selectors';
+import {getItemsInCart} from '../../store/app-business-logic/selectors';
 
 export default function Cart() {
+
+  const isPopupDeletingActive = useSelector(getPopupDeletingStatus);
+  const itemsInCart = useSelector(getItemsInCart);
+
   return (
     <>
       <Header page={AppRoute.CART}/>
@@ -26,7 +33,7 @@ export default function Cart() {
           </ul>
 
           <ul className="cart-list">
-            {guitars.slice(0, 2).map((item) => <CartItem key={item.code} item={item}/>)}
+            {itemsInCart.map((item) => <CartItem key={item.code} item={item}/>)}
           </ul>
 
           <div className="cart-ordering">
@@ -48,6 +55,7 @@ export default function Cart() {
         </div>
       </main>
       <Footer page={AppRoute.CART}/>
+      {isPopupDeletingActive && <PopupDeleting />}
     </>
   );
 }

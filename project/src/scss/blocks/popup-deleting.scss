@@ -1,22 +1,22 @@
-.popup-notification {
+.popup-deleting {
   @include popup;
 }
 
-.popup-notification__modal {
+.popup-deleting__modal {
   @include modal;
   width: 72.55%;
-  min-height: 185px;
+  min-height: 230px;
   padding-top: 5px;
   padding-left: 15px;
 }
 
-.popup-notification__wrapper {
+.popup-deleting__wrapper {
   width: 90.14%;
   margin: 0 auto;
   position: relative;
 }
 
-.popup-notification__close {
+.popup-deleting__close {
   position: absolute;
   right: -15px;
   top: -5px;
@@ -58,26 +58,72 @@
   }
 }
 
-.popup-notification__message {
+.popup-deleting__title {
   font-size: 18px;
   letter-spacing: 0.05em;
 }
 
-.popup-notification__transition {
+.popup-deleting__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.popup-deleting__information {
+  margin-left: 47px;
+}
+
+.popup-deleting__item-name {
+  margin-top: 10px;
+  letter-spacing: 0.02em;
+  margin-bottom: 10px;
+}
+
+.popup-deleting__item-code,
+.popup-deleting__features,
+.popup-deleting__price {
+  display: block;
+  letter-spacing: 0.08em;
+}
+
+.popup-deleting__adding {
   @include bright-button;
   min-width: 220px;
   height: 46px;
-  margin-left: 80px;
+  margin-left: 18.5%;
   font-size: 16px;
   font-weight: bold;
   margin-top: 10px;
   letter-spacing: 0.08em;
 }
 
-.popup-notification__continuation {
+.popup-deleting__price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.popup-deleting__deleting {
+  @include bright-button;
+  min-width: 220px;
+  height: 46px;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  font-family: "Droid Sans", "Arial", sans-serif;
+  padding-bottom: 6px;
+}
+
+.popup-deleting__continuation {
   @include button-continuation;
   min-width: 220px;
   height: 46px;
-  margin-left: 40px;
-  margin-top: 10px;
+  margin-top: 15px;
+}
+
+.popup-deleting__buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 18.5%;
+  margin-top: 13px;
 }

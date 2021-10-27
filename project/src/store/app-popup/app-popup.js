@@ -1,9 +1,10 @@
 import {createReducer} from '@reduxjs/toolkit';
-import {setPopupPurchaseStatus, setPopupNotificationStatus} from '../action';
+import {setPopupPurchaseStatus, setPopupNotificationStatus, setPopupDeletingStatus} from '../action';
 
 const initialState = {
   isPopupPurchaseOpen: false,
   isPopupNotificationOpen: false,
+  isPopupDeletingOpen: false,
 };
 
 const appPopup = createReducer(initialState, (builder) => {
@@ -13,6 +14,9 @@ const appPopup = createReducer(initialState, (builder) => {
     })
     .addCase(setPopupNotificationStatus, (state, action) => {
       state.isPopupNotificationOpen = action.payload;
+    })
+    .addCase(setPopupDeletingStatus, (state, action) => {
+      state.isPopupDeletingOpen = action.payload;
     });
 });
 
