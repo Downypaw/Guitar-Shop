@@ -10,6 +10,10 @@ export const ActionType = {
   DELETE_ITEM_IN_CART: '/deleteItemInCart',
   SET_ACTIVE_SORT_OPTION: '/setActiveSortOption',
   SET_ACTIVE_SORT_DIRECTION: '/setActiveSortDirection',
+  SET_MIN_PRICE: '/setMinPrice',
+  SET_MAX_PRICE: '/setMaxPrice',
+  SET_INSTRUMENT_TYPE: '/setInstrumentType',
+  SET_STRING_NUMBER: '/setStringNumber',
 };
 
 export const setPopupPurchaseStatus = createAction(ActionType.CHANGE_POPUP_PURCHASE_STATUS, (value) => ({
@@ -43,5 +47,21 @@ export const setActiveSortOption = createAction(ActionType.SET_ACTIVE_SORT_OPTIO
 }));
 
 export const setActiveSortDirection = createAction(ActionType.SET_ACTIVE_SORT_DIRECTION, (value) => ({
+  payload: value,
+}));
+
+export const setMinPrice = createAction(ActionType.SET_MIN_PRICE, (value) => ({
+  payload: value,
+}));
+
+export const setMaxPrice = createAction(ActionType.SET_MAX_PRICE, (value) => ({
+  payload: value,
+}));
+
+export const setInstrumentType = createAction(ActionType.SET_INSTRUMENT_TYPE, (value) => ({
+  payload: value,
+}));
+
+export const setStringNumber = createAction(ActionType.SET_STRING_NUMBER, (value) => ({
   payload: value,
 }));

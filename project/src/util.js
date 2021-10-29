@@ -1,7 +1,6 @@
 import {SortDirection, SortType} from './const';
 
 export const sortByProperty = (property = SortType.PRICE, type) => {
-  console.log(property);
   let resultType;
 
   if (type) {
