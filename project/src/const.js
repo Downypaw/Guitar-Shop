@@ -13,6 +13,7 @@ export const ReducerName = {
   BUSINESS_LOGIC: 'BUSSINES_LOGIC',
   DATA: 'DATA',
   POPUP: 'POPUP',
+  FILTER: 'FILTER',
 };
 
 export const InstrumentType = {
@@ -28,4 +29,23 @@ export const SortType = {
 export const SortDirection = {
   ASCENDING: 'ASCENDING',
   DESCENDING: 'DESCENDING',
+}
+
+export const MINUS_CODE = 189;
+
+export const PriceBoard = {
+  MIN: 'MIN',
+  MAX: 'MAX',
+}
+
+export const InstrumentTypeName = {
+  ACUSTIC: 'акустическая гитара',
+  ELECTRO: 'электрогитара',
+  UKULELE: 'укулеле',
+}
+
+export const StringsNumberForInstrument = {
+  'акустическая гитара': [6, 7, 12],
+  'электрогитара': [4, 6, 7],
+  'укулеле': [4],
 }

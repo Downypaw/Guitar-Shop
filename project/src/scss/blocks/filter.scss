@@ -103,9 +103,14 @@
   }
 }
 
-.filter__submit {
-  @include default-button;
-  min-width: 57.69%;
-  min-height: 30px;
-  text-transform: uppercase;
+.filter__type-checkbox:disabled + .filter__type-label {
+  position: relative;
+  color: $disabled-color;
+
+  &::before {
+    background: $disabled-background-color;
+    border: 1px solid $disabled-color;
+    box-sizing: border-box;
+
+  }
 }
