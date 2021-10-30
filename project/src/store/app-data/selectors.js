@@ -9,15 +9,19 @@ export const getCatalogItems = (state) => state[ReducerName.DATA].catalogItems;
 export const getResultItems = createSelector(
   [getCatalogItems, getActiveSortOption, getActiveSortDirection, getMinPrice, getMaxPrice, getInstrumentTypes, getStringNumbers],
   (catalogItems, activeSortOption, activeSortDirection, minPrice, maxPrice, instrumentTypes, stringNumbers) => {
-    const currentSortOption = activeSortOption ? activeSortOption : SortType.PRICE;
+    const currentSortOption = !activeSortOption && activeSortDirection ? SortType.PRICE : activeSortOption;
+    console.log(currentSortOption);
     let sortedItems;
     switch (currentSortOption) {
       case SortType.PRICE:
         sortedItems =  catalogItems.slice().sort(sortByProperty(SortType.PRICE, activeSortDirection));
+        break;
       case SortType.POPULARITY:
         sortedItems = catalogItems.slice().sort(sortByProperty(SortType.POPULARITY, activeSortDirection));
+        break;
       default:
         sortedItems = catalogItems;
+        break;
     }
 
     return sortedItems

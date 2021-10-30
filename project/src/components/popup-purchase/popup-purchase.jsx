@@ -1,18 +1,28 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getSelectedItem} from '../../store/app-business-logic/selectors';
+import {getSelectedItem, getItemsInCart} from '../../store/app-business-logic/selectors';
 import {setPopupPurchaseStatus, setPopupNotificationStatus, setItemsInCart} from '../../store/action';
 import {InstrumentType} from '../../const';
 import {onOverlayClick} from '../../util';
 
 export default function PopupPurchase() {
 
+  const itemsInCart = useSelector(getItemsInCart);
   const selectedItem = useSelector(getSelectedItem);
 
   const dispatch = useDispatch();
 
   const handleAddingButtonClick = () => {
-    dispatch(setItemsInCart(selectedItem));
+    if (itemsInCart.filter((item) => item.code === selectedItem.code).length > 0) {
+      const index = itemsInCart.findIndex((item) => item.code === selectedItem.code);
+      dispatch(setItemsInCart([
+        ...itemsInCart.slice(0, index),
+        Object.assign({}, selectedItem, {count: itemsInCart[index].count + 1}),
+        ...itemsInCart.slice(index + 1)
+      ]));
+    } else {
+      dispatch(setItemsInCart([...itemsInCart, Object.assign({}, selectedItem, {count: 1})]));
+    }
     dispatch(setPopupPurchaseStatus(false));
     dispatch(setPopupNotificationStatus(true));
   }
