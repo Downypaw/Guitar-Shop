@@ -14,7 +14,7 @@ const appBusinessLogic = createReducer(initialState, (builder) => {
       state.selectedItem = action.payload;
     })
     .addCase(setItemsInCart, (state, action) => {
-      state.itemsInCart = [...state.itemsInCart, action.payload];
+      state.itemsInCart = action.payload;
     })
     .addCase(deleteItemInCart, (state, action) => {
       state.itemsInCart = [...state.itemsInCart.slice(0, action.payload - 1), ...state.itemsInCart.slice(action.payload + 1)];

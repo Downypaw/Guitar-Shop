@@ -1,19 +1,33 @@
 import React, {useState} from 'react';
-import {useDispatch} from 'react-redux';
-import {setPopupDeletingStatus, setSelectedItem} from '../../store/action';
+import {useDispatch, useSelector} from 'react-redux';
+import {getItemsInCart} from '../../store/app-business-logic/selectors';
+import {setPopupDeletingStatus, setSelectedItem, setItemsInCart} from '../../store/action';
 import {onEscKeyDown} from '../../util';
 
 export default function CartItem({item}) {
-  const [itemCount, setItemCount] = useState(1);
-
+  const itemsInCart = useSelector(getItemsInCart);
   const dispatch = useDispatch();
 
   const handleMinusButtonClick = () => {
-    if (itemCount > 1) {
-      setItemCount(itemCount - 1);
+    if (item.count > 1) {
+      const index = itemsInCart.findIndex((itemInCart) => itemInCart.code === item.code);
+      dispatch(setItemsInCart([
+        ...itemsInCart.slice(0, index),
+        Object.assign({}, item, {count: itemsInCart[index].count - 1}),
+        ...itemsInCart.slice(index + 1)
+      ]));
     } else {
       handleDeleting();
     }
+  }
+
+  const handlePlusButtonClick = () => {
+    const index = itemsInCart.findIndex((itemInCart) => itemInCart.code === item.code);
+    dispatch(setItemsInCart([
+      ...itemsInCart.slice(0, index),
+      Object.assign({}, item, {count: itemsInCart[index].count + 1}),
+      ...itemsInCart.slice(index + 1)
+    ]));
   }
 
   const handleDeleting = () => {
@@ -55,14 +69,19 @@ export default function CartItem({item}) {
           </button>
         </li>
         <li className="cart-list__control">
-          <button className="cart-list__control-button">{itemCount}</button>
+          <button className="cart-list__control-button">{item.count}</button>
         </li>
         <li className="cart-list__control">
-          <button className="cart-list__control-button">+</button>
+          <button
+            className="cart-list__control-button"
+            onClick={handlePlusButtonClick}
+          >
+            +
+          </button>
         </li>
       </ul>
 
-      <span className="cart-list__total">{item.price.toLocaleString()} ₽</span>
+      <span className="cart-list__total">{(item.price * item.count).toLocaleString()} ₽</span>
     </li>
   );
 }

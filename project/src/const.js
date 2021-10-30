@@ -49,3 +49,9 @@ export const StringsNumberForInstrument = {
   'электрогитара': [4, 6, 7],
   'укулеле': [4],
 }
+
+export const Promocode = {
+  GITARAHIT: {name: 'GITARAHIT', SALE_PERCENT: 10},
+  SUPERGITARA: {name: 'SUPERGITARA', SALE_SUM: 700},
+  GITARA2020: {name: 'GITARA2020', SALE_SUM: 3000, SALE_PERCENT_LIMIT: 30},
+}
