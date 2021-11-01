@@ -41,11 +41,19 @@
   background-color: transparent;
 }
 
+.sorting__direction-button {
+  width: 22px;
+  height: 22px;
+  margin-top: 16px;
+  border: none;
+  background-color: transparent;
+}
+
 .sorting__direction-type:first-of-type {
   margin-right: 14px;
   position: relative;
 
-  &::before {
+  .sorting__direction-button::before {
     position: absolute;
     content: "";
     width: 0;
@@ -57,12 +65,12 @@
     left: 5px;
   }
 
-  &:hover::before {
+  .sorting__direction-button:hover::before {
   	border-bottom: 10px solid $bright-color;
   }
 
-  &:active::before,
-  &:focus::before {
+  .sorting__direction-button:active::before,
+  .sorting__direction-button:focus::before {
   	border-bottom: 10px solid $text-color;
   }
 }
@@ -70,7 +78,7 @@
 .sorting__direction-type:last-of-type {
   position: relative;
 
-  &::before {
+  .sorting__direction-button::before {
     position: absolute;
     content: "";
     width: 0;
@@ -82,12 +90,12 @@
     left: 5px;
   }
 
-  &:hover::before {
+  .sorting__direction-button:hover::before {
   	border-top: 10px solid $bright-color;
   }
 
-  &:active::before,
-  &:focus::before {
+  .sorting__direction-button:active::before,
+  .sorting__direction-button:focus::before {
   	border-top: 10px solid $text-color;
   }
 }
@@ -101,6 +109,20 @@
 .sorting__direction-type--active:last-of-type {
   &::before {
     border-top: 10px solid $text-color;
+  }
+}
+
+.sorting__option {
+  color: $hovered-button-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $checkbox-color;
+  }
+
+  &:active,
+  &:focus {
+    color: $text-color;
   }
 }
 

@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import {MINUS_CODE, PriceBoard, InstrumentType, InstrumentTypeName, StringsNumberForInstrument} from '../../const';
 import {useSelector, useDispatch} from 'react-redux';
 import {getMinPrice, getMaxPrice, getInstrumentTypes, getStringNumbers} from '../../store/app-filter/selectors';
-import {getResultItems} from '../../store/app-data/selectors';
+import {getResultItems, getCatalogItems} from '../../store/app-data/selectors';
 import {setMinPrice, setMaxPrice, setInstrumentType, setStringNumber} from '../../store/action';
 
 export default function Filter() {
   const items = useSelector(getResultItems);
+  const allItems = useSelector(getCatalogItems);
   const minPrice = useSelector(getMinPrice);
   const maxPrice = useSelector(getMaxPrice);
   const instrumentTypes = useSelector(getInstrumentTypes);
@@ -27,8 +28,8 @@ export default function Filter() {
 
   const dispatch = useDispatch();
 
-  const maxPriceOfAllItems = Math.max(...items.map((item) => item.price));
-  const minPriceOfAllItems = Math.min(...items.map((item) => item.price));
+  const maxPriceOfAllItems = Math.max(...allItems.map((item) => item.price));
+  const minPriceOfAllItems = Math.min(...allItems.map((item) => item.price));
 
 
   const handleMinusKeyDown = (evt) => {

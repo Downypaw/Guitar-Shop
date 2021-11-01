@@ -1,4 +1,5 @@
 import React, {useState, useRef} from 'react';
+import {Link} from "react-router-dom";
 import Header from '../header/header';
 import CartItem from '../cart-item/cart-item';
 import Footer from '../footer/footer';
@@ -17,8 +18,7 @@ export default function Cart() {
   const isPopupDeletingActive = useSelector(getPopupDeletingStatus);
   const ref = useRef();
 
-  console.log(countTotal);
-  console.log(usedPromocodes);
+  console.log(itemsInCart);
 
   const handlePromocodeSubmit = (evt) => {
     evt.preventDefault();
@@ -26,9 +26,7 @@ export default function Cart() {
       console.log(promocode);
       switch(promocode) {
         case Promocode.GITARAHIT.name:
-          console.log('dd');
           if (!usedPromocodes.includes(Promocode.GITARAHIT.name)) {
-            console.log('dd');
             setCountTotal(countTotal * ((100 - Promocode.GITARAHIT.SALE_PERCENT) / 100));
             setUsedPromocodes([...usedPromocodes, Promocode.GITARAHIT.name]);
           }
@@ -54,7 +52,6 @@ export default function Cart() {
 
   const handlePromocodeInput = (evt) => {
     setPromocode(evt.target.value);
-    console.log(promocode);
     if (evt.target.value in Promocode) {
       if (itemsInCart.length > 0) {
         ref.current.setCustomValidity('');
@@ -79,18 +76,18 @@ export default function Cart() {
           <h2 className="page-title page-title--cart">Корзина</h2>
           <ul className="page-path">
             <li className="page-path__item">
-              <a className="page-path__link">Главная</a>
+              <a className="page-path__link" href="#">Главная</a>
             </li>
             <li className="page-path__item">
-              <a className="page-path__link">Каталог</a>
+              <Link className="page-path__link" to="/">Каталог</Link>
             </li>
             <li className="page-path__item">
-              <a className="page-path__link">Оформляем</a>
+              Оформляем
             </li>
           </ul>
 
           <ul className="cart-list">
-            {itemsInCart.map((item) => <CartItem key={item.code} item={item}/>)}
+            {itemsInCart.map((item) => <CartItem key={item.code} item={item} onCountChange={(value) => setCountTotal(value)}/>)}
           </ul>
 
           <div className="cart-ordering">

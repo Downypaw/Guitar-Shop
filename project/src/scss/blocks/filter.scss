@@ -41,10 +41,20 @@
   box-sizing: border-box;
   width: 100%;
   padding: 0 18px;
+  border: 1px solid $checkbox-color;
 
   &::placeholder {
     color: lighten($text-color, .6);
     font-size: 14px;
+  }
+
+  &:hover {
+    border: 1px solid $text-hover-color;
+  }
+
+  &:focus,
+  &:active {
+    border: solid 1px $text-color;
   }
 }
 
@@ -92,6 +102,23 @@
     border-radius: 4px;
     left: -40px;
     box-sizing: border-box;
+  }
+}
+
+.filter__type-checkbox:hover + .filter__type-label {
+  color: $bright-color;
+
+  &::before {
+    background-color: lighten($bright-color, 35%);
+  }
+}
+
+.filter__type-checkbox:active + .filter__type-label,
+.filter__type-checkbox:focus + .filter__type-label {
+  color: $bright-color-active;
+
+  &::before {
+    border: 1px solid $text-color;
   }
 }
 

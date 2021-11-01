@@ -8,10 +8,19 @@
   min-height: 230px;
   padding-top: 5px;
   padding-left: 15px;
+
+  @media (min-width: 1366px) {
+    width: 991px;
+  }
 }
 
 .popup-deleting__wrapper {
   width: 90.14%;
+  box-sizing: border-box;
+  padding-right: 15px;
+  @media (min-width: 1366px) {
+    width: 880px;
+  }
   margin: 0 auto;
   position: relative;
 }
@@ -64,8 +73,8 @@
 }
 
 .popup-deleting__content {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
 }
 
 .popup-deleting__information {
@@ -124,6 +133,7 @@
 .popup-deleting__buttons-wrapper {
   display: flex;
   flex-direction: column;
-  margin-left: 18.5%;
+  padding-left: 36%;
   margin-top: 13px;
+  letter-spacing: 0.08em;
 }
