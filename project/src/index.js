@@ -10,6 +10,10 @@ const store = configureStore({
   reducer: rootReducer,
 });
 
+window.addEventListener('load', () => {
+  navigator.serviceWorker.register('/sw.js');
+});
+
 ReactDOM.render(
   <React.StrictMode>
     <Suspense fallback={<div>Loading... </div>}>

@@ -3,11 +3,11 @@ import {createAction} from '@reduxjs/toolkit';
 export const ActionType = {
   CHANGE_POPUP_PURCHASE_STATUS: '/changePopupPurchaseStatus',
   CHANGE_POPUP_NOTIFICATION_STATUS: '/changePopupNotificationStatus',
-  CHANGE_POPUP_DELETING_STATUS: '/changePopupDeletingStatus',
+  CHANGE_POPUP_DELETING_STATUS: '/cart/changePopupDeletingStatus',
   SET_SELECTED_ITEM: '/setSelectedItem',
   SET_CATALOG_ITEMS: '/setCatalogItems',
   SET_ITEMS_IN_CART: '/setItemsInCart',
-  DELETE_ITEM_IN_CART: '/deleteItemInCart',
+  DELETE_ITEM_IN_CART: '/cart/deleteItemInCart',
   SET_ACTIVE_SORT_OPTION: '/setActiveSortOption',
   SET_ACTIVE_SORT_DIRECTION: '/setActiveSortDirection',
   SET_MIN_PRICE: '/setMinPrice',

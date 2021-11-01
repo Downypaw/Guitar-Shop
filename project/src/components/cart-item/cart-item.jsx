@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
+import itemProp from '../props-validation/item.prop';
 import {useDispatch, useSelector} from 'react-redux';
 import {getItemsInCart} from '../../store/app-business-logic/selectors';
 import {setPopupDeletingStatus, setSelectedItem, setItemsInCart} from '../../store/action';
@@ -92,4 +94,9 @@ export default function CartItem({item, onCountChange}) {
       <span className="cart-list__total">{(item.price * item.count).toLocaleString()} ₽</span>
     </li>
   );
+}
+
+CartItem.propTypes = {
+  guitar: itemProp,
+  onCountChange: PropTypes.func.isRequired,
 }

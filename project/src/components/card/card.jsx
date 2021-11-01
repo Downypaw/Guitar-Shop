@@ -1,9 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import {DEFAULT_RATING} from '../../const';
 import {onEscKeyDown} from '../../util';
 import {useDispatch} from 'react-redux';
 import {setPopupPurchaseStatus, setPopupNotificationStatus, setSelectedItem} from '../../store/action';
+import itemProp from '../props-validation/item.prop';
 
 export default function Card({guitar}) {
   const dispatch = useDispatch();
@@ -50,12 +50,6 @@ export default function Card({guitar}) {
   );
 }
 
-Card.propTypes = PropTypes.shape({
-  code: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  popularity: PropTypes.number.isRequired,
-  stringNumber: PropTypes.number.isRequired,
-  price: PropTypes.number.isRequired,
-  img: PropTypes.string.isRequired,
-}).isRequired;
+Card.propTypes = {
+  guitar: itemProp,
+};
