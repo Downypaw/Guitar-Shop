@@ -9,7 +9,7 @@ import PopupNotification from '../popup-notification/popup-notification';
 import PopupDeleting from '../popup-deleting/popup-deleting';
 import {useSelector} from 'react-redux';
 import {getPopupPurchaseStatus, getPopupNotificationStatus} from '../../store/app-popup/selectors';
-import {AppRoute} from '../../const.js';
+import {AppRoute} from '../../const';
 
 export default function MainPage() {
 

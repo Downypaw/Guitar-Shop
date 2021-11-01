@@ -4,7 +4,7 @@ import Header from '../header/header';
 import CartItem from '../cart-item/cart-item';
 import Footer from '../footer/footer';
 import PopupDeleting from '../popup-deleting/popup-deleting';
-import {AppRoute} from '../../const.js';
+import {AppRoute} from '../../const';
 import {useSelector} from 'react-redux';
 import {getPopupDeletingStatus} from '../../store/app-popup/selectors';
 import {getItemsInCart} from '../../store/app-business-logic/selectors';

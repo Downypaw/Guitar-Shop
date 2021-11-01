@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory} from "react-router-dom";
-import {AppRoute} from '../../const.js';
+import {AppRoute} from '../../const';
 import PropTypes from 'prop-types';
 
 export default function Footer({page}) {

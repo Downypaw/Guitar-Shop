@@ -1,6 +1,6 @@
 import React from 'react';
 import {useHistory, Link} from "react-router-dom";
-import {AppRoute} from '../../const.js';
+import {AppRoute} from '../../const';
 import PropTypes from 'prop-types';
 import {useSelector} from 'react-redux';
 import {getItemsInCart} from '../../store/app-business-logic/selectors';
