@@ -4,7 +4,7 @@ import {getItemsInCart} from '../../store/app-business-logic/selectors';
 import {setPopupDeletingStatus, setSelectedItem, setItemsInCart} from '../../store/action';
 import {onEscKeyDown} from '../../util';
 
-export default function CartItem({item}) {
+export default function CartItem({item, onCountChange}) {
   const itemsInCart = useSelector(getItemsInCart);
   const dispatch = useDispatch();
 
@@ -16,6 +16,10 @@ export default function CartItem({item}) {
         Object.assign({}, item, {count: itemsInCart[index].count - 1}),
         ...itemsInCart.slice(index + 1)
       ]));
+      onCountChange(itemsInCart.reduce((accumulator, currentValue, elementIndex) => {
+        const count = elementIndex === index ? currentValue.count - 1 : currentValue.count;
+        return accumulator + count * currentValue.price;
+      }, 0));
     } else {
       handleDeleting();
     }
@@ -28,6 +32,10 @@ export default function CartItem({item}) {
       Object.assign({}, item, {count: itemsInCart[index].count + 1}),
       ...itemsInCart.slice(index + 1)
     ]));
+    onCountChange(itemsInCart.reduce((accumulator, currentValue, elementIndex) => {
+      const count = elementIndex === index ? currentValue.count + 1 : currentValue.count;
+      return accumulator + count * currentValue.price;
+    }, 0));
   }
 
   const handleDeleting = () => {
@@ -52,7 +60,7 @@ export default function CartItem({item}) {
 
       <div  className="cart-list__group">
         <h3 className="cart-list__item-name">{item.type.toUpperCase()} {item.name.toUpperCase()}</h3>
-        <span className="cart-list__item-code">Артикул: {item.id}</span>
+        <span className="cart-list__item-code">Артикул: {item.code}</span>
         <span className="cart-list__item-description">
           {item.type[0].toUpperCase() + item.type.slice(1)}, {item.stringNumber} струнная
         </span>

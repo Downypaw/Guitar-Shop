@@ -25,10 +25,10 @@ export default function MainPage() {
           <h2 className="page-title">Каталог гитар</h2>
           <ul className="page-path">
             <li className="page-path__item">
-              <a className="page-path__link">Главная</a>
+              <a className="page-path__link" href="#">Главная</a>
             </li>
             <li className="page-path__item">
-              <a className="page-path__link">Каталог</a>
+              <a className="page-path__link" href="#">Каталог</a>
             </li>
           </ul>
           <div className="page-main__content">

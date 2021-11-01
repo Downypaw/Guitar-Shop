@@ -34,12 +34,12 @@
   margin-right: 35px;
 
   &:hover {
-    border-color: lighten($hovered-button-color, 70%);
+    border-color: lighten($hovered-button-color, 40%);
   }
 
   &:active,
   &:focus {
-    border-color: lighten($hovered-button-color, 40%);
+    border-color: lighten($hovered-button-color, 30%);
   }
 }
 
@@ -63,7 +63,7 @@
   letter-spacing: 0.05em;
   margin-right: 5px;
   margin-top: 20px;
-  margin-left: 25%;
+  text-align: right;
 }
 
 .cart-ordering__order-submit {

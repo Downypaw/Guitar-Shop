@@ -19,6 +19,7 @@ export default function Sorting() {
             <a
               className={`sorting__option ${activeSortingOption === SortType.PRICE ? 'sorting__option--active' : ''}`}
               onClick={() => dispatch(setActiveSortOption(SortType.PRICE))}
+              href="#"
             >
               по цене
             </a>
@@ -27,6 +28,7 @@ export default function Sorting() {
             <a
               className={`sorting__option ${activeSortingOption === SortType.POPULARITY ? 'sorting__option--active' : ''}`}
               onClick={() => dispatch(setActiveSortOption(SortType.POPULARITY))}
+              href="#"
             >
               по популярности
             </a>

@@ -10,7 +10,6 @@ export const getResultItems = createSelector(
   [getCatalogItems, getActiveSortOption, getActiveSortDirection, getMinPrice, getMaxPrice, getInstrumentTypes, getStringNumbers],
   (catalogItems, activeSortOption, activeSortDirection, minPrice, maxPrice, instrumentTypes, stringNumbers) => {
     const currentSortOption = !activeSortOption && activeSortDirection ? SortType.PRICE : activeSortOption;
-    console.log(currentSortOption);
     let sortedItems;
     switch (currentSortOption) {
       case SortType.PRICE:

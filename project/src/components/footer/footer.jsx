@@ -62,19 +62,19 @@ export default function Footer({page}) {
             <h3 className="page-footer__title">Информация</h3>
             <ul className="page-footer__information-list">
               <li className="page-footer__information-item">
-                <a className="page-footer__information-link">Где купить?</a>
+                <a className="page-footer__information-link" href="#">Где купить?</a>
               </li>
               <li className="page-footer__information-item">
-                <a className="page-footer__information-link">Блог</a>
+                <a className="page-footer__information-link" href="#">Блог</a>
               </li>
               <li className="page-footer__information-item">
-                <a className="page-footer__information-link">Вопрос - ответ</a>
+                <a className="page-footer__information-link" href="#">Вопрос - ответ</a>
               </li>
               <li className="page-footer__information-item">
-                <a className="page-footer__information-link">Возврат</a>
+                <a className="page-footer__information-link" href="#">Возврат</a>
               </li>
               <li className="page-footer__information-item">
-                <a className="page-footer__information-link">Сервис-центры</a>
+                <a className="page-footer__information-link" href="#">Сервис-центры</a>
               </li>
             </ul>
           </div>
@@ -84,24 +84,24 @@ export default function Footer({page}) {
             <p className="page-footer__address">
               г. Санкт-Петербург, м. Невский проспект, ул. Казанская 6.
               <br/>
-              <a className="page-footer__phone">8-812-500-50-50</a>
+              <a className="page-footer__phone" href="#">8-812-500-50-50</a>
             </p>
             <p className="page-footer__mode"> Режим работы: <span className="page-footer__clock">с 11:00 до 20:00</span>,  без выходных.</p>
           </div>
 
           <ul className="page-footer__socials">
             <li className="page-footer__socials-item">
-              <a className="page-footer__socials-link page-footer__socials-link--facebook">
+              <a className="page-footer__socials-link page-footer__socials-link--facebook" href="#">
                 <span className="visually-hidden">Facebook</span>
               </a>
             </li>
             <li className="page-footer__socials-item">
-              <a className="page-footer__socials-link page-footer__socials-link--instagram">
+              <a className="page-footer__socials-link page-footer__socials-link--instagram" href="#">
                 <span className="visually-hidden">Instagram</span>
               </a>
             </li>
             <li className="page-footer__socials-item">
-              <a className="page-footer__socials-link page-footer__socials-link--twitter">
+              <a className="page-footer__socials-link page-footer__socials-link--twitter" href="#">
                 <span className="visually-hidden">Twitter</span>
               </a>
             </li>

@@ -8,12 +8,20 @@
   min-height: 185px;
   padding-top: 5px;
   padding-left: 15px;
+
+  @media (min-width: 1366px) {
+    width: 991px;
+  }
 }
 
 .popup-notification__wrapper {
   width: 90.14%;
   margin: 0 auto;
   position: relative;
+
+  @media (min-width: 1366px) {
+    width: 880px;
+  }
 }
 
 .popup-notification__close {
@@ -66,18 +74,21 @@
 .popup-notification__transition {
   @include bright-button;
   min-width: 220px;
+  width: 34%;
   height: 46px;
-  margin-left: 80px;
+  margin-left: 12.2%;
   font-size: 16px;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 13px;
   letter-spacing: 0.08em;
 }
 
 .popup-notification__continuation {
   @include button-continuation;
   min-width: 220px;
+  width: 33%;
   height: 46px;
-  margin-left: 40px;
-  margin-top: 10px;
+  margin-left: 5.8%;
+  margin-top: 13px;
+  letter-spacing: 0.1em;
 }

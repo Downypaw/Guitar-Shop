@@ -15,6 +15,7 @@ export default function PopupDeleting() {
 
   const handleDeletingButtonClick = () => {
     const indexOfDeletingItem = itemsInCart.findIndex((item, index) => item.code === selectedItem.code);
+    console.log(indexOfDeletingItem);
     dispatch(deleteItemInCart(indexOfDeletingItem));
     dispatch(setPopupDeletingStatus(false));
   }
