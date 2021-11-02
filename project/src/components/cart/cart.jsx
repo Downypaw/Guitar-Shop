@@ -4,11 +4,10 @@ import Header from '../header/header';
 import CartItem from '../cart-item/cart-item';
 import Footer from '../footer/footer';
 import PopupDeleting from '../popup-deleting/popup-deleting';
-import {AppRoute} from '../../const';
 import {useSelector} from 'react-redux';
 import {getPopupDeletingStatus} from '../../store/app-popup/selectors';
 import {getItemsInCart} from '../../store/app-business-logic/selectors';
-import {Promocode, SALE_PERCENT, SALE_SUM, SALE_GITARA2020_SUM} from '../../const';
+import {Promocode} from '../../const';
 
 export default function Cart() {
   const itemsInCart = useSelector(getItemsInCart);
@@ -17,8 +16,6 @@ export default function Cart() {
   const [usedPromocodes, setUsedPromocodes] = useState([]);
   const isPopupDeletingActive = useSelector(getPopupDeletingStatus);
   const ref = useRef();
-
-  console.log(itemsInCart);
 
   const handlePromocodeSubmit = (evt) => {
     evt.preventDefault();
@@ -69,14 +66,14 @@ export default function Cart() {
 
   return (
     <>
-      <Header page={AppRoute.CART}/>
+      <Header />
       <main className="page-main">
         <div className="container">
           <h1 className="visually-hidden">Магазин Guitar Shop</h1>
           <h2 className="page-title page-title--cart">Корзина</h2>
           <ul className="page-path">
             <li className="page-path__item">
-              <a className="page-path__link" href="#">Главная</a>
+              <Link className="page-path__link" to="/blank">Главная</Link>
             </li>
             <li className="page-path__item">
               <Link className="page-path__link" to="/">Каталог</Link>
@@ -120,7 +117,7 @@ export default function Cart() {
           </div>
         </div>
       </main>
-      <Footer page={AppRoute.CART}/>
+      <Footer />
       {isPopupDeletingActive && <PopupDeleting />}
     </>
   );

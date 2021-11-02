@@ -14,6 +14,7 @@ export const ActionType = {
   SET_MAX_PRICE: '/setMaxPrice',
   SET_INSTRUMENT_TYPE: '/setInstrumentType',
   SET_STRING_NUMBER: '/setStringNumber',
+  SET_ACTIVE_PAGE: '/setActivePage',
 };
 
 export const setPopupPurchaseStatus = createAction(ActionType.CHANGE_POPUP_PURCHASE_STATUS, (value) => ({
@@ -63,5 +64,9 @@ export const setInstrumentType = createAction(ActionType.SET_INSTRUMENT_TYPE, (v
 }));
 
 export const setStringNumber = createAction(ActionType.SET_STRING_NUMBER, (value) => ({
+  payload: value,
+}));
+
+export const setActivePage = createAction(ActionType.SET_ACTIVE_PAGE, (value) => ({
   payload: value,
 }));

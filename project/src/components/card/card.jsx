@@ -7,7 +7,6 @@ import itemProp from '../props-validation/item.prop';
 
 export default function Card({guitar}) {
   const dispatch = useDispatch();
-  const bodyElement = document.querySelector('body');
 
   const handleEscKeydown = (evt) => {
     dispatch(setPopupPurchaseStatus(false));

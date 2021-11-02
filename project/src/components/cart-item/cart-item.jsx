@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import itemProp from '../props-validation/item.prop';
 import {useDispatch, useSelector} from 'react-redux';

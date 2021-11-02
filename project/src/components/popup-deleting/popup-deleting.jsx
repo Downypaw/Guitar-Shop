@@ -1,8 +1,7 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {getPopupDeletingStatus} from '../../store/app-popup/selectors';
 import {getSelectedItem, getItemsInCart} from '../../store/app-business-logic/selectors';
-import {setPopupDeletingStatus, setSelectedItem, deleteItemInCart} from '../../store/action';
+import {setPopupDeletingStatus, deleteItemInCart} from '../../store/action';
 import {onOverlayClick} from '../../util';
 import {InstrumentType} from '../../const';
 

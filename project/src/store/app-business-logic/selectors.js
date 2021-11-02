@@ -4,3 +4,4 @@ export const getSelectedItem = (state) => state[ReducerName.BUSINESS_LOGIC].sele
 export const getItemsInCart = (state) => state[ReducerName.BUSINESS_LOGIC].itemsInCart;
 export const getActiveSortOption = (state) => state[ReducerName.BUSINESS_LOGIC].activeSortOption;
 export const getActiveSortDirection = (state) => state[ReducerName.BUSINESS_LOGIC].activeSortDirection;
+export const getActivePage = (state) => state[ReducerName.BUSINESS_LOGIC].activePage;

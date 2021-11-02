@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import Header from '../header/header';
 import Filter from '../filter/filter';
 import Sorting from '../sorting/sorting';
@@ -6,10 +7,8 @@ import Catalog from '../catalog/catalog';
 import Footer from '../footer/footer';
 import PopupPurchase from '../popup-purchase/popup-purchase';
 import PopupNotification from '../popup-notification/popup-notification';
-import PopupDeleting from '../popup-deleting/popup-deleting';
 import {useSelector} from 'react-redux';
 import {getPopupPurchaseStatus, getPopupNotificationStatus} from '../../store/app-popup/selectors';
-import {AppRoute} from '../../const';
 
 export default function MainPage() {
 
@@ -18,17 +17,17 @@ export default function MainPage() {
 
   return (
     <>
-      <Header page={AppRoute.INDEX}/>
+      <Header />
       <main className="page-main">
         <div className="container">
           <h1 className="visually-hidden">Магазин Guitar Shop</h1>
           <h2 className="page-title">Каталог гитар</h2>
           <ul className="page-path">
             <li className="page-path__item">
-              <a className="page-path__link" href="#">Главная</a>
+              <Link className="page-path__link" to="/blank">Главная</Link>
             </li>
             <li className="page-path__item">
-              <a className="page-path__link" href="#">Каталог</a>
+              <Link className="page-path__link" to="/blank">Каталог</Link>
             </li>
           </ul>
           <div className="page-main__content">
@@ -38,7 +37,7 @@ export default function MainPage() {
           </div>
         </div>
       </main>
-      <Footer page={AppRoute.INDEX}/>
+      <Footer />
       {isPopupPurchaseActive && <PopupPurchase />}
       {isPopupNotificationActive && <PopupNotification />}
     </>

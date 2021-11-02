@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
-import {MINUS_CODE, PriceBoard, InstrumentType, InstrumentTypeName, StringsNumberForInstrument} from '../../const';
+import React from 'react';
+import {MINUS_CODE, PriceBoard, InstrumentTypeName, StringsNumberForInstrument} from '../../const';
 import {useSelector, useDispatch} from 'react-redux';
 import {getMinPrice, getMaxPrice, getInstrumentTypes, getStringNumbers} from '../../store/app-filter/selectors';
-import {getResultItems, getCatalogItems} from '../../store/app-data/selectors';
+import {getCatalogItems} from '../../store/app-data/selectors';
 import {setMinPrice, setMaxPrice, setInstrumentType, setStringNumber} from '../../store/action';
 
 export default function Filter() {
-  const items = useSelector(getResultItems);
   const allItems = useSelector(getCatalogItems);
   const minPrice = useSelector(getMinPrice);
   const maxPrice = useSelector(getMaxPrice);

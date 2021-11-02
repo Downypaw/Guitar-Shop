@@ -1,6 +1,5 @@
 import {createReducer} from '@reduxjs/toolkit';
 import {setMinPrice, setMaxPrice, setInstrumentType, setStringNumber} from '../action';
-import {StringsNumberForInstrument} from '../../const';
 
 const initialState = {
   minPrice: 0,

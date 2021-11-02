@@ -1,4 +1,4 @@
-import {ReducerName, SortType, SortDirection} from '../../const';
+import {ReducerName, SortType} from '../../const';
 import {createSelector} from 'reselect';
 import {sortByProperty} from '../../util';
 import {getActiveSortOption, getActiveSortDirection} from '../app-business-logic/selectors';

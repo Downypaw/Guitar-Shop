@@ -1,11 +1,14 @@
 import {createReducer} from '@reduxjs/toolkit';
-import {setSelectedItem, setItemsInCart, deleteItemInCart, setActiveSortOption, setActiveSortDirection} from '../action';
+import {setSelectedItem, setItemsInCart, deleteItemInCart, setActiveSortOption,
+   setActiveSortDirection, setActivePage} from '../action';
+import {AppRoute} from '../../const';
 
 const initialState = {
   selectedItem: {},
   itemsInCart: [],
   activeSortOption: '',
   activeSortDirection: '',
+  activePage: AppRoute.INDEX,
 };
 
 const appBusinessLogic = createReducer(initialState, (builder) => {
@@ -25,6 +28,9 @@ const appBusinessLogic = createReducer(initialState, (builder) => {
     })
     .addCase(setActiveSortDirection, (state, action) => {
       state.activeSortDirection = action.payload;
+    })
+    .addCase(setActivePage, (state, action) => {
+      state.activePage = action.payload;
     });
 });
 

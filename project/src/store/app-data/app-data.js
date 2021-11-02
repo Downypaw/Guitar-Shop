@@ -9,7 +9,7 @@ const initialState = {
 const appData = createReducer(initialState, (builder) => {
   builder
     .addCase(setCatalogItems, (state, action) => {
-      state.catalogItems = state.catalogItems;
+      state.catalogItems = action.payload;
     });
 });
 
