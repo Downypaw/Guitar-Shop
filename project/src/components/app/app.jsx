@@ -3,6 +3,7 @@ import {Switch, Route, BrowserRouter} from "react-router-dom";
 import MainPageScreen from '../main-page/main-page';
 
 const CartScreen = React.lazy(() => import('../cart/cart'));
+const BlankPageScreen = React.lazy(() => import('../blank-page/blank-page'));
 
 export default function App() {
   return (
@@ -13,6 +14,9 @@ export default function App() {
         </Route>
         <Route exact path='/cart'>
           <CartScreen />
+        </Route>
+        <Route exact path='/blank'>
+          <BlankPageScreen />
         </Route>
       </Switch>
     </BrowserRouter>

@@ -73,7 +73,7 @@ export default function Cart() {
           <h2 className="page-title page-title--cart">Корзина</h2>
           <ul className="page-path">
             <li className="page-path__item">
-              <a className="page-path__link" href="#">Главная</a>
+              <Link className="page-path__link" to="/blank">Главная</Link>
             </li>
             <li className="page-path__item">
               <Link className="page-path__link" to="/">Каталог</Link>
