@@ -1,12 +1,15 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {useHistory} from "react-router-dom";
+import {AppRoute} from '../../const';
+import PropTypes from 'prop-types';
 
-export default function Footer() {
+export default function Footer({page}) {
   let history = useHistory();
 
   const handleLogoClick = () => {
-    history.push('/');
+    if (page !== AppRoute.INDEX) {
+      history.push('/');
+    }
   }
 
   const handleEnterKeyDown = (evt) => {
@@ -20,8 +23,8 @@ export default function Footer() {
       <div className="page-footer__content">
         <div className="page-footer__container container">
           <div
-            className="page-footer__left page-footer__left--active"
-            tabIndex="0"
+            className={`page-footer__left ${page !== AppRoute.INDEX ? 'page-footer__left--active' : ''}`}
+            tabIndex={page !== AppRoute.INDEX ? "0" : "-1"}
             onClick={handleLogoClick}
             onKeyDown={handleEnterKeyDown}
           >
@@ -38,19 +41,19 @@ export default function Footer() {
             <h3 className="page-footer__title">Каталог</h3>
             <ul className="page-footer__catalog-list">
               <li className="page-footer__catalog-item">
-                <Link className="page-footer__catalog-link" to="/blank">Акустические гитары</Link>
+                <a className="page-footer__catalog-link" href="#">Акустические гитары</a>
               </li>
               <li className="page-footer__catalog-item">
-                <Link className="page-footer__catalog-link" to="/blank">Классические гитары</Link>
+                <a className="page-footer__catalog-link" href="#">Классические гитары</a>
               </li>
               <li className="page-footer__catalog-item">
-                <Link className="page-footer__catalog-link" to="/blank">Электрогитары</Link>
+                <a className="page-footer__catalog-link" href="#">Электрогитары</a>
               </li>
               <li className="page-footer__catalog-item">
-                <Link className="page-footer__catalog-link" to="/blank">Бас-гитары</Link>
+                <a className="page-footer__catalog-link" href="#">Бас-гитары</a>
               </li>
               <li className="page-footer__catalog-item">
-                <Link className="page-footer__catalog-link" to="/blank">Укулеле</Link>
+                <a className="page-footer__catalog-link" href="#">Укулеле</a>
               </li>
             </ul>
           </div>
@@ -59,19 +62,19 @@ export default function Footer() {
             <h3 className="page-footer__title">Информация</h3>
             <ul className="page-footer__information-list">
               <li className="page-footer__information-item">
-                <Link className="page-footer__information-link" to="/blank">Где купить?</Link>
+                <a className="page-footer__information-link" href="#">Где купить?</a>
               </li>
               <li className="page-footer__information-item">
-                <Link className="page-footer__information-link" to="/blank">Блог</Link>
+                <a className="page-footer__information-link" href="#">Блог</a>
               </li>
               <li className="page-footer__information-item">
-                <Link className="page-footer__information-link" to="/blank">Вопрос - ответ</Link>
+                <a className="page-footer__information-link" href="#">Вопрос - ответ</a>
               </li>
               <li className="page-footer__information-item">
-                <Link className="page-footer__information-link" to="/blank">Возврат</Link>
+                <a className="page-footer__information-link" href="#">Возврат</a>
               </li>
               <li className="page-footer__information-item">
-                <Link className="page-footer__information-link" to="/blank">Сервис-центры</Link>
+                <a className="page-footer__information-link" href="#">Сервис-центры</a>
               </li>
             </ul>
           </div>
@@ -81,30 +84,34 @@ export default function Footer() {
             <p className="page-footer__address">
               г. Санкт-Петербург, м. Невский проспект, ул. Казанская 6.
               <br/>
-              <Link className="page-footer__phone" to="/blank">8-812-500-50-50</Link>
+              <a className="page-footer__phone" href="tel:88125005050">8-812-500-50-50</a>
             </p>
             <p className="page-footer__mode"> Режим работы: <span className="page-footer__clock">с 11:00 до 20:00</span>,  без выходных.</p>
           </div>
 
           <ul className="page-footer__socials">
             <li className="page-footer__socials-item">
-              <Link className="page-footer__socials-link page-footer__socials-link--facebook" to="/blank">
+              <a className="page-footer__socials-link page-footer__socials-link--facebook" href="#">
                 <span className="visually-hidden">Facebook</span>
-              </Link>
+              </a>
             </li>
             <li className="page-footer__socials-item">
-              <Link className="page-footer__socials-link page-footer__socials-link--instagram" to="/blank">
+              <a className="page-footer__socials-link page-footer__socials-link--instagram" href="#">
                 <span className="visually-hidden">Instagram</span>
-              </Link>
+              </a>
             </li>
             <li className="page-footer__socials-item">
-              <Link className="page-footer__socials-link page-footer__socials-link--twitter" to="/blank">
+              <a className="page-footer__socials-link page-footer__socials-link--twitter" href="#">
                 <span className="visually-hidden">Twitter</span>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
       </div>
     </footer>
   );
+}
+
+Footer.propTypes = {
+  page: PropTypes.string.isRequired,
 }

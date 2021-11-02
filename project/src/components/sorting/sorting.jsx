@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {useSelector, useDispatch} from 'react-redux';
 import {getActiveSortOption, getActiveSortDirection} from '../../store/app-business-logic/selectors';
 import {setActiveSortOption, setActiveSortDirection} from '../../store/action';
@@ -17,22 +16,22 @@ export default function Sorting() {
         <h3 className="sorting__title">Сортировать:</h3>
         <ul className="sorting__list">
           <li className="sorting__list-item">
-            <Link
+            <a
               className={`sorting__option ${activeSortingOption === SortType.PRICE ? 'sorting__option--active' : ''}`}
               onClick={() => dispatch(setActiveSortOption(SortType.PRICE))}
-              to="/blank"
+              href="#"
             >
               по цене
-            </Link>
+            </a>
           </li>
           <li className="sorting__list-item">
-            <Link
+            <a
               className={`sorting__option ${activeSortingOption === SortType.POPULARITY ? 'sorting__option--active' : ''}`}
               onClick={() => dispatch(setActiveSortOption(SortType.POPULARITY))}
-              to="/blank"
+              href="#"
             >
               по популярности
-            </Link>
+            </a>
           </li>
         </ul>
       </div>

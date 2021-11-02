@@ -7,7 +7,7 @@ import PopupDeleting from '../popup-deleting/popup-deleting';
 import {useSelector} from 'react-redux';
 import {getPopupDeletingStatus} from '../../store/app-popup/selectors';
 import {getItemsInCart} from '../../store/app-business-logic/selectors';
-import {Promocode} from '../../const';
+import {Promocode, AppRoute} from '../../const';
 
 export default function Cart() {
   const itemsInCart = useSelector(getItemsInCart);
@@ -66,14 +66,14 @@ export default function Cart() {
 
   return (
     <>
-      <Header />
+      <Header page={AppRoute.CART}/>
       <main className="page-main">
         <div className="container">
           <h1 className="visually-hidden">Магазин Guitar Shop</h1>
           <h2 className="page-title page-title--cart">Корзина</h2>
           <ul className="page-path">
             <li className="page-path__item">
-              <Link className="page-path__link" to="/blank">Главная</Link>
+              <a className="page-path__link" href="#">Главная</a>
             </li>
             <li className="page-path__item">
               <Link className="page-path__link" to="/">Каталог</Link>
@@ -117,7 +117,7 @@ export default function Cart() {
           </div>
         </div>
       </main>
-      <Footer />
+      <Footer page={AppRoute.CART}/>
       {isPopupDeletingActive && <PopupDeleting />}
     </>
   );
