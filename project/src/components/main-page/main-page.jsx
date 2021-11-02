@@ -27,7 +27,7 @@ export default function MainPage() {
               <a className="page-path__link" href="#">Главная</a>
             </li>
             <li className="page-path__item">
-              <a className="page-path__link" href="#">Каталог</a>
+              Каталог
             </li>
           </ul>
           <div className="page-main__content">

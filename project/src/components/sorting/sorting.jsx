@@ -18,7 +18,10 @@ export default function Sorting() {
           <li className="sorting__list-item">
             <a
               className={`sorting__option ${activeSortingOption === SortType.PRICE ? 'sorting__option--active' : ''}`}
-              onClick={() => dispatch(setActiveSortOption(SortType.PRICE))}
+              onClick={(evt) => {
+                evt.preventDefault();
+                dispatch(setActiveSortOption(SortType.PRICE))
+              }}
               href="#"
             >
               по цене
@@ -27,7 +30,10 @@ export default function Sorting() {
           <li className="sorting__list-item">
             <a
               className={`sorting__option ${activeSortingOption === SortType.POPULARITY ? 'sorting__option--active' : ''}`}
-              onClick={() => dispatch(setActiveSortOption(SortType.POPULARITY))}
+              onClick={(evt) => {
+                evt.preventDefault();
+                dispatch(setActiveSortOption(SortType.POPULARITY));
+              }}
               href="#"
             >
               по популярности
