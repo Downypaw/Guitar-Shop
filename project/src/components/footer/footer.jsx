@@ -19,7 +19,7 @@ export default function Footer() {
     <footer className="page-footer">
       <div className="page-footer__content">
         <div className="page-footer__container container">
-          <div className="page-footer__left"
+          <div
             className="page-footer__left page-footer__left--active"
             tabIndex="0"
             onClick={handleLogoClick}
