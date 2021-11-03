@@ -47,6 +47,7 @@ export default function CartItem({item, onCountChange}) {
     dispatch(setPopupDeletingStatus(true));
     document.addEventListener('keydown', (evt) => onEscKeyDown(evt, () => dispatch(setPopupDeletingStatus(false))));
     bodyElement.classList.add('page__body--unactive');
+    onCountChange(0);
   }
 
   return (
