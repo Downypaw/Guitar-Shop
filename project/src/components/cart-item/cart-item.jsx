@@ -20,13 +20,13 @@ export default function CartItem({item, onCountChange}) {
         Object.assign({}, item, {count: itemsInCart[index].count - 1}),
         ...itemsInCart.slice(index + 1)
       ]));
+      onCountChange(itemsInCart.reduce((accumulator, currentValue, elementIndex) => {
+        const count = elementIndex === index ? currentValue.count - 1 : currentValue.count;
+        return accumulator + count * currentValue.price;
+      }, 0));
     } else {
       handleDeleting();
     }
-    onCountChange(itemsInCart.reduce((accumulator, currentValue, elementIndex) => {
-      const count = elementIndex === index ? currentValue.count - 1 : currentValue.count;
-      return accumulator + count * currentValue.price;
-    }, 0));
   }
 
   const handlePlusButtonClick = () => {
@@ -47,7 +47,6 @@ export default function CartItem({item, onCountChange}) {
     dispatch(setPopupDeletingStatus(true));
     document.addEventListener('keydown', (evt) => onEscKeyDown(evt, () => dispatch(setPopupDeletingStatus(false))));
     bodyElement.classList.add('page__body--unactive');
-    onCountChange(0);
   }
 
   return (

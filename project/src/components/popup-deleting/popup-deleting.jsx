@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {useSelector, useDispatch} from 'react-redux';
 import {getSelectedItem, getItemsInCart} from '../../store/app-business-logic/selectors';
 import {setPopupDeletingStatus, deleteItemInCart} from '../../store/action';
 import {onOverlayClick} from '../../util';
 import {InstrumentType} from '../../const';
 
-export default function PopupDeleting() {
+export default function PopupDeleting({onCountChange}) {
 
   const selectedItem = useSelector(getSelectedItem);
   const itemsInCart = useSelector(getItemsInCart);
@@ -19,6 +20,10 @@ export default function PopupDeleting() {
     dispatch(deleteItemInCart(indexOfDeletingItem));
     dispatch(setPopupDeletingStatus(false));
     bodyElement.classList.remove('page__body--unactive');
+    onCountChange(itemsInCart.reduce((accumulator, currentValue, elementIndex) => {
+      const count = elementIndex === indexOfDeletingItem ? 0 : currentValue.count;
+      return accumulator + count * currentValue.price;
+    }, 0));
   }
 
   const handlePopupClose = () => {
@@ -78,4 +83,8 @@ export default function PopupDeleting() {
       </div>
     </section>
   );
+}
+
+PopupDeleting.propTypes = {
+  onCountChange: PropTypes.func.isRequired,
 }

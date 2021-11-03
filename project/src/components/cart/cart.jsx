@@ -123,7 +123,7 @@ export default function Cart() {
         </div>
       </main>
       <Footer page={AppRoute.CART}/>
-      {isPopupDeletingActive && <PopupDeleting />}
+      {isPopupDeletingActive && <PopupDeleting onCountChange={(value) => setCountTotal(value)}/>}
     </>
   );
 }
