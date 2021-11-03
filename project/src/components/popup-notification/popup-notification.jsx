@@ -10,8 +10,15 @@ export default function PopupNotification() {
 
   let history = useHistory();
 
+  const bodyElement = document.querySelector('body');
+
+  const handlePopupClose = () => {
+    dispatch(setPopupNotificationStatus(false))
+    bodyElement.classList.remove('page__body--unactive');
+  }
+
   return (
-    <section className="popup-notification" onClick={(evt) => onOverlayClick(evt, () => dispatch(setPopupNotificationStatus(false)))}>
+    <section className="popup-notification" onClick={(evt) => onOverlayClick(evt, handlePopupClose)}>
       <div className="popup-notification__modal">
         <div className="popup-notification__wrapper">
           <button
@@ -19,7 +26,7 @@ export default function PopupNotification() {
             type="button"
             name="close"
             aria-label="Закрыть"
-            onClick={() => dispatch(setPopupNotificationStatus(false))}
+            onClick={() => handlePopupClose()}
           >
           </button>
 
@@ -28,7 +35,7 @@ export default function PopupNotification() {
             <button
               className="popup-notification__transition"
               onClick={() => {
-                dispatch(setPopupNotificationStatus(false));
+                handlePopupClose();
                 history.push(AppRoute.CART);
               }}
             >
@@ -36,7 +43,7 @@ export default function PopupNotification() {
             </button>
             <button
               className="popup-notification__continuation"
-              onClick={() => dispatch(setPopupNotificationStatus(false))}
+              onClick={() => handlePopupClose()}
             >
               Продолжить покупки
             </button>

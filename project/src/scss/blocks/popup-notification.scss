@@ -1,5 +1,6 @@
 .popup-notification {
   @include popup;
+  line-height: 15px;
 }
 
 .popup-notification__modal {
@@ -25,6 +26,7 @@
 }
 
 .popup-notification__close {
+  cursor: pointer;
   position: absolute;
   right: -15px;
   top: -5px;
@@ -81,6 +83,7 @@
   font-weight: bold;
   margin-top: 13px;
   letter-spacing: 0.08em;
+  cursor: pointer;
 }
 
 .popup-notification__continuation {
@@ -91,4 +94,5 @@
   margin-left: 5.8%;
   margin-top: 13px;
   letter-spacing: 0.1em;
+  cursor: pointer;
 }

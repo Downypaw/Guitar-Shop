@@ -8,6 +8,7 @@
   font-weight: bold;
   font-size: 18px;
   letter-spacing: 0.04em;
+  line-height: 21px;
 }
 
 .filter__group-title {
@@ -42,6 +43,7 @@
   width: 100%;
   padding: 0 18px;
   border: 1px solid $checkbox-color;
+  line-height: 10px;
 
   &::placeholder {
     color: lighten($text-color, .6);
@@ -92,6 +94,8 @@
 
 .filter__type-checkbox + .filter__type-label {
   position: relative;
+  line-height: 19px;
+  cursor: pointer;
 
   &::before {
     content: "";

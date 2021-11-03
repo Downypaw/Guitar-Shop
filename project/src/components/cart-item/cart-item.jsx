@@ -10,21 +10,23 @@ export default function CartItem({item, onCountChange}) {
   const itemsInCart = useSelector(getItemsInCart);
   const dispatch = useDispatch();
 
+  const bodyElement = document.querySelector('body');
+
   const handleMinusButtonClick = () => {
+    const index = itemsInCart.findIndex((itemInCart) => itemInCart.code === item.code);
     if (item.count > 1) {
-      const index = itemsInCart.findIndex((itemInCart) => itemInCart.code === item.code);
       dispatch(setItemsInCart([
         ...itemsInCart.slice(0, index),
         Object.assign({}, item, {count: itemsInCart[index].count - 1}),
         ...itemsInCart.slice(index + 1)
       ]));
-      onCountChange(itemsInCart.reduce((accumulator, currentValue, elementIndex) => {
-        const count = elementIndex === index ? currentValue.count - 1 : currentValue.count;
-        return accumulator + count * currentValue.price;
-      }, 0));
     } else {
       handleDeleting();
     }
+    onCountChange(itemsInCart.reduce((accumulator, currentValue, elementIndex) => {
+      const count = elementIndex === index ? currentValue.count - 1 : currentValue.count;
+      return accumulator + count * currentValue.price;
+    }, 0));
   }
 
   const handlePlusButtonClick = () => {
@@ -44,6 +46,7 @@ export default function CartItem({item, onCountChange}) {
     dispatch(setSelectedItem(item));
     dispatch(setPopupDeletingStatus(true));
     document.addEventListener('keydown', (evt) => onEscKeyDown(evt, () => dispatch(setPopupDeletingStatus(false))));
+    bodyElement.classList.add('page__body--unactive');
   }
 
   return (
@@ -56,8 +59,8 @@ export default function CartItem({item, onCountChange}) {
       >
       </button>
       <picture>
-        <source type="image/webp" srcSet={`${item.img}.webp`}/>
-        <img className="cart-list__image" src={`${item.img}.png`} alt="Гитара" width="48" height="124"/>
+        <source type="image/webp" srcSet={`${item.img}.webp 1x, ${item.img}@2x.webp 2x`}/>
+        <img className="cart-list__image" src={`${item.img}.png 1x, ${item.img}@2x.png 2x`} alt="Гитара" width="48" height="124"/>
       </picture>
 
       <div  className="cart-list__group">
@@ -97,6 +100,6 @@ export default function CartItem({item, onCountChange}) {
 }
 
 CartItem.propTypes = {
-  guitar: itemProp,
+  item: itemProp,
   onCountChange: PropTypes.func.isRequired,
 }

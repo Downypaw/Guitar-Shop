@@ -12,6 +12,13 @@ export default function PopupPurchase() {
 
   const dispatch = useDispatch();
 
+  const bodyElement = document.querySelector('body');
+
+  const handlePopupClose = () => {
+    dispatch(setPopupPurchaseStatus(false));
+    bodyElement.classList.remove('page__body--unactive');
+  }
+
   const handleAddingButtonClick = () => {
     if (itemsInCart.filter((item) => item.code === selectedItem.code).length > 0) {
       const index = itemsInCart.findIndex((item) => item.code === selectedItem.code);
@@ -28,7 +35,7 @@ export default function PopupPurchase() {
   }
 
   return (
-    <section className="popup-purchase" onClick={(evt) => onOverlayClick(evt, () => dispatch(setPopupPurchaseStatus(false)))}>
+    <section className="popup-purchase" onClick={(evt) => onOverlayClick(evt, handlePopupClose)}>
       <div className="popup-purchase__modal">
         <div className="popup-purchase__wrapper">
           <button
@@ -36,15 +43,15 @@ export default function PopupPurchase() {
             type="button"
             name="close"
             aria-label="Закрыть"
-            onClick={() => dispatch(setPopupPurchaseStatus(false))}
+            onClick={() => handlePopupClose()}
           >
           </button>
 
           <h4 className="popup-purchase__title">Добавить товар в корзину</h4>
           <div className="popup-purchase__content">
             <picture>
-              <source type="image/webp" srcSet={`${selectedItem.img}.webp`}/>
-              <img className="popup-purchase__image" src={`${selectedItem.img}.png`} alt="Гитара" width="48" height="124"/>
+              <source type="image/webp" srcSet={`${selectedItem.img}.webp 1x, ${selectedItem.img}@2x.webp 2x`}/>
+              <img className="popup-purchase__image" src={`${selectedItem.img}.png 1x, ${selectedItem.img}@2x.png 2x`} alt="Гитара" width="48" height="124"/>
             </picture>
 
             <div className="popup-purchase__information">

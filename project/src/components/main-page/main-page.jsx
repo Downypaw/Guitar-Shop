@@ -16,6 +16,12 @@ export default function MainPage() {
   const isPopupPurchaseActive = useSelector(getPopupPurchaseStatus);
   const isPopupNotificationActive = useSelector(getPopupNotificationStatus);
 
+  const bodyElement = document.querySelector('body');
+
+  if (isPopupPurchaseActive || isPopupNotificationActive) {
+    bodyElement.classList.add('page__body--unactive');
+  }
+
   return (
     <>
       <Header page={AppRoute.INDEX}/>

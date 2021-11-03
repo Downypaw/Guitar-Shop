@@ -2,29 +2,34 @@
   border: 1px solid $block-color;
   padding: 0 13px;
   padding-bottom: 18px;
+  box-sizing: border-box;
+  min-height: 304px;
 }
 
 .card__image {
   margin: 15px 62px;
+  margin-bottom: 10px;
 }
 
 .card__customer-estimate {
   display: flex;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .card__comments {
   font-size: 10px;
   color: $checkbox-color;
   display: inline-block;
-  margin-top: -5px;
   margin-left: 3px;
+  line-height: 15px;
 }
 
 .card__main-information {
   letter-spacing: 0.05em;
   display: flex;
   justify-content: space-between;
+  line-height: 15px;
+  margin-top: 4px;
 }
 
 .card__more-information {
@@ -33,8 +38,10 @@
   height: 23px;
   box-sizing: border-box;
   letter-spacing: 0.05em;
-  margin-top: 10px;
+  margin-top: 12px;
   margin-right: 14px;
+  line-height: 10px;
+  cursor: pointer;
 }
 
 .card__purchase {
@@ -43,9 +50,10 @@
   height: 23px;
   box-sizing: border-box;
   letter-spacing: 0.05em;
-  margin-top: 10px;
+  margin-top: 12px;
   padding-left: 18px;
   position: relative;
+  cursor: pointer;
 
   &:before {
     content: "";

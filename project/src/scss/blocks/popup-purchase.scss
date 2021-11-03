@@ -1,5 +1,6 @@
 .popup-purchase {
   @include popup;
+  line-height: 15px;
 }
 
 .popup-purchase__modal {
@@ -29,6 +30,7 @@
 }
 
 .popup-purchase__close {
+  cursor: pointer;
   position: absolute;
   right: -15px;
   top: -5px;
@@ -107,6 +109,7 @@
   letter-spacing: 0.08em;
   margin-left: 34%;
   margin-right: 13px;
+  cursor: pointer;
 }
 
 .popup-purchase__price {

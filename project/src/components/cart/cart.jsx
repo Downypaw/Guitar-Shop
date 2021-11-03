@@ -17,10 +17,15 @@ export default function Cart() {
   const isPopupDeletingActive = useSelector(getPopupDeletingStatus);
   const ref = useRef();
 
+  const bodyElement = document.querySelector('body');
+
+  if (isPopupDeletingActive) {
+    bodyElement.classList.add('page__body--unactive');
+  }
+
   const handlePromocodeSubmit = (evt) => {
     evt.preventDefault();
     if (itemsInCart.length > 0) {
-      console.log(promocode);
       switch(promocode) {
         case Promocode.GITARAHIT.name:
           if (!usedPromocodes.includes(Promocode.GITARAHIT.name)) {

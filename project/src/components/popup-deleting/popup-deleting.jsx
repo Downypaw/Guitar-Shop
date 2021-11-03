@@ -12,15 +12,22 @@ export default function PopupDeleting() {
 
   const dispatch = useDispatch();
 
+  const bodyElement = document.querySelector('body');
+
   const handleDeletingButtonClick = () => {
     const indexOfDeletingItem = itemsInCart.findIndex((item, index) => item.code === selectedItem.code);
-    console.log(indexOfDeletingItem);
     dispatch(deleteItemInCart(indexOfDeletingItem));
     dispatch(setPopupDeletingStatus(false));
+    bodyElement.classList.remove('page__body--unactive');
+  }
+
+  const handlePopupClose = () => {
+    dispatch(setPopupDeletingStatus(false))
+    bodyElement.classList.remove('page__body--unactive');
   }
 
   return (
-    <section className="popup-deleting" onClick={(evt) => onOverlayClick(evt, () => dispatch(setPopupDeletingStatus(false)))}>
+    <section className="popup-deleting" onClick={(evt) => onOverlayClick(evt, handlePopupClose)}>
       <div className="popup-deleting__modal">
         <div className="popup-deleting__wrapper">
           <button
@@ -28,15 +35,15 @@ export default function PopupDeleting() {
             type="button"
             name="close"
             aria-label="Закрыть"
-            onClick={() => dispatch(setPopupDeletingStatus(false))}
+            onClick={() => handlePopupClose()}
           >
           </button>
 
           <h4 className="popup-deleting__title">Удалить этот товар?</h4>
           <div className="popup-deleting__content">
             <picture>
-              <source type="image/webp" srcSet={`${selectedItem.img}.webp`}/>
-              <img className="popup-deleting__image" src={`${selectedItem.img}.png`} alt="Гитара" width="48" height="124"/>
+              <source type="image/webp" srcSet={`${selectedItem.img}.webp 1x, ${selectedItem.img}@2x.webp 2x`}/>
+              <img className="popup-deleting__image" src={`${selectedItem.img}.png 1x, ${selectedItem.img}@2x.png 2x`} alt="Гитара" width="48" height="124"/>
             </picture>
 
             <div className="popup-deleting__information">
@@ -61,7 +68,7 @@ export default function PopupDeleting() {
 
               <button
                 className="popup-deleting__continuation"
-                onClick={() => dispatch(setPopupDeletingStatus(false))}
+                onClick={() => handlePopupClose()}
               >
                 Продолжить покупки
               </button>

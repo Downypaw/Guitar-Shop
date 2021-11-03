@@ -13,17 +13,20 @@ export default function Card({guitar}) {
     dispatch(setPopupNotificationStatus(false));
   }
 
+  const bodyElement = document.querySelector('body');
+
   const handlePurchaseButtonClick = () => {
     dispatch(setSelectedItem(guitar));
     dispatch(setPopupPurchaseStatus(true));
     document.addEventListener('keydown', (evt) => onEscKeyDown(evt, handleEscKeydown));
+    bodyElement.classList.add('page__body--unactive');
   }
 
   return (
     <li className="card">
       <picture className="card__picture">
-        <source type="image/webp" srcSet={`${guitar.img}.webp`}/>
-        <img className="card__image" src={`${guitar.img}.png`} alt="Гитара" width="68" height="190"/>
+        <source type="image/webp" srcSet={`${guitar.img}.webp 1x, ${guitar.img}@2x.webp 2x`}/>
+        <img className="card__image" src={`${guitar.img}.png 1x, ${guitar.img}@2x.png 2x`} alt="Гитара" width="68" height="190"/>
       </picture>
       <div className="card__customer-estimate">
         <div className="card__rating rating">

@@ -78,10 +78,20 @@
 
 .webp .page-header::before {
   background: url("../../img/guitar.webp");
+  background-size: 834px 290px;
+
+  @media (min-resolution: 2dppx) {
+    background: url("../../img/guitar@2x.webp");
+    background-size: 834px 290px;
+  }
 }
 
 .no-webp .page-header::before {
   background: url("../../img/guitar.png");
+
+  @media (min-resolution: 2dppx) {
+    background: url("../../img/guitar@2x.png");
+  }
 }
 
 .page-header__extra-link {

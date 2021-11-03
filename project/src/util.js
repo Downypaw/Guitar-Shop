@@ -15,9 +15,11 @@ export const sortByProperty = (property = SortType.PRICE, type) => {
 }
 
 export const onEscKeyDown = (evt, func) => {
+  const bodyElement = document.querySelector('body');
   if (evt.key === 'Escape' || evt.key === 'Esc') {
     evt.preventDefault();
     func();
+    bodyElement.classList.remove('page__body--unactive');
     document.removeEventListener('keydown', onEscKeyDown);
   }
 };
