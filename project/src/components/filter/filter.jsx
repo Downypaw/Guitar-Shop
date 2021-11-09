@@ -12,8 +12,6 @@ export default function Filter() {
   const instrumentTypes = useSelector(getInstrumentTypes);
   const stringNumbers = useSelector(getStringNumbers);
 
-  console.log(stringNumbers);
-
   const displayedStringOptions = instrumentTypes.length > 0
     ? [...new Set(
       instrumentTypes.reduce((accumulator, currentValue, index) => {
