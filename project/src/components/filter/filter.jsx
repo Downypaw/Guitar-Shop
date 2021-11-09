@@ -12,6 +12,8 @@ export default function Filter() {
   const instrumentTypes = useSelector(getInstrumentTypes);
   const stringNumbers = useSelector(getStringNumbers);
 
+  console.log(stringNumbers);
+
   const displayedStringOptions = instrumentTypes.length > 0
     ? [...new Set(
       instrumentTypes.reduce((accumulator, currentValue, index) => {
@@ -24,6 +26,15 @@ export default function Filter() {
         return accumulator;
       }), [])
     ];
+
+    const displayedInstrumentTypes = stringNumbers.length > 0
+      ? [...new Set(Object.entries(StringsNumberForInstrument).reduce((accumulator, [key, value]) => {
+	       if (value.find((value) => stringNumbers.includes(value))) {
+           accumulator.push(key)
+         }
+         return accumulator;
+       }, []))]
+      : Object.values(InstrumentTypeName);
 
   const dispatch = useDispatch();
 
@@ -40,21 +51,29 @@ export default function Filter() {
   const checkField = (board) => {
     if (board === PriceBoard.MIN) {
       if (minPrice > maxPrice && maxPrice && minPrice) {
-        dispatch(setMinPrice(maxPrice));
+        dispatch(setMinPrice(Number(maxPrice)));
       }
 
-      if (minPrice < minPriceOfAllItems) {
-        dispatch(setMinPrice(minPriceOfAllItems));
+      if (minPrice < minPriceOfAllItems && minPrice) {
+        dispatch(setMinPrice(Number(minPriceOfAllItems)));
+      }
+
+      if (minPrice > maxPriceOfAllItems) {
+        dispatch(setMinPrice(Number(maxPriceOfAllItems)));
       }
     }
 
     if (board === PriceBoard.MAX) {
       if (maxPrice < minPrice && maxPrice && minPrice) {
-        dispatch(setMaxPrice(minPrice));
+        dispatch(setMaxPrice(Number(minPrice)));
       }
 
       if (maxPrice > maxPriceOfAllItems) {
-        dispatch(setMaxPrice(maxPriceOfAllItems));
+        dispatch(setMaxPrice(Number(maxPriceOfAllItems)));
+      }
+
+      if (maxPrice < minPriceOfAllItems && maxPrice) {
+        dispatch(setMaxPrice(Number(minPriceOfAllItems)));
       }
     }
   }
@@ -100,7 +119,7 @@ export default function Filter() {
               onKeyDown={handleMinusKeyDown}
               onChange={(evt) => {
                 if (evt.target.value >= 0) {
-                  dispatch(setMinPrice(evt.target.value));
+                  dispatch(setMinPrice(Number(evt.target.value)));
                 }
               }}
               onBlur={() => checkField(PriceBoard.MIN)}
@@ -118,7 +137,7 @@ export default function Filter() {
               onKeyDown={handleMinusKeyDown}
               onChange={(evt) => {
                 if (evt.target.value >= 0) {
-                  dispatch(setMaxPrice(evt.target.value));
+                  dispatch(setMaxPrice(Number(evt.target.value)));
                 }
               }}
               onBlur={() => checkField(PriceBoard.MAX)}
@@ -130,31 +149,46 @@ export default function Filter() {
           <legend className="filter__group-title">Тип гитар</legend>
           <ul className="filter__type-list">
             <li className="filter__type-item">
-            <input className="filter__type-checkbox visually-hidden" type="checkbox" id="type-1"/>
+            <input
+              className="filter__type-checkbox visually-hidden"
+              type="checkbox"
+              id="type-1"
+              disabled={!displayedInstrumentTypes.includes(InstrumentTypeName.ACUSTIC)}
+              onClick={() => handleInstrumentTypesChange(InstrumentTypeName.ACUSTIC)}
+            />
             <label
               className="filter__type-label"
               htmlFor="type-1"
-              onClick={() => handleInstrumentTypesChange(InstrumentTypeName.ACUSTIC)}
             >
               Акустические гитары
             </label>
             </li>
             <li className="filter__type-item">
-              <input className="filter__type-checkbox visually-hidden" type="checkbox" id="type-2"/>
+              <input
+                className="filter__type-checkbox visually-hidden"
+                type="checkbox"
+                id="type-2"
+                disabled={!displayedInstrumentTypes.includes(InstrumentTypeName.ELECTRO)}
+                onClick={() => handleInstrumentTypesChange(InstrumentTypeName.ELECTRO)}
+              />
               <label
                 className="filter__type-label"
                 htmlFor="type-2"
-                onClick={() => handleInstrumentTypesChange(InstrumentTypeName.ELECTRO)}
               >
                 Электрогитары
               </label>
             </li>
             <li className="filter__type-item">
-              <input className="filter__type-checkbox visually-hidden" type="checkbox" id="type-3"/>
+              <input
+                className="filter__type-checkbox visually-hidden"
+                type="checkbox"
+                id="type-3"
+                disabled={!displayedInstrumentTypes.includes(InstrumentTypeName.UKULELE)}
+                onClick={() => handleInstrumentTypesChange(InstrumentTypeName.UKULELE)}
+              />
               <label
                 className="filter__type-label"
                 htmlFor="type-3"
-                onClick={() => handleInstrumentTypesChange(InstrumentTypeName.UKULELE)}
               >
                 Укулеле
               </label>
@@ -171,11 +205,11 @@ export default function Filter() {
               type="checkbox"
               id="4-string"
               disabled={!displayedStringOptions.includes(4)}
+              onClick={(evt) => handleStringNumbersChange(4)}
             />
             <label
               className="filter__type-label"
               htmlFor="4-string"
-              onClick={(evt) => handleStringNumbersChange(4)}
             >
               4
             </label>
@@ -186,11 +220,11 @@ export default function Filter() {
                 type="checkbox"
                 id="6-string"
                 disabled={!displayedStringOptions.includes(6)}
+                onClick={(evt) => handleStringNumbersChange(6)}
               />
               <label
                 className="filter__type-label"
                 htmlFor="6-string"
-                onClick={(evt) => handleStringNumbersChange(6)}
               >
                 6
               </label>
@@ -201,11 +235,11 @@ export default function Filter() {
                 type="checkbox"
                 id="7-string"
                 disabled={!displayedStringOptions.includes(7)}
+                onClick={(evt) => handleStringNumbersChange(7)}
               />
               <label
                 className="filter__type-label"
                 htmlFor="7-string"
-                onClick={(evt) => handleStringNumbersChange(7)}
               >
                 7
               </label>
@@ -216,11 +250,11 @@ export default function Filter() {
                 type="checkbox"
                 id="12-string"
                 disabled={!displayedStringOptions.includes(12)}
+                onClick={(evt) => handleStringNumbersChange(12)}
               />
               <label
                 className="filter__type-label"
                 htmlFor="12-string"
-                onClick={(evt) => handleStringNumbersChange(12)}
               >
                 12
               </label>

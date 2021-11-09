@@ -55,3 +55,5 @@ export const Promocode = {
   SUPERGITARA: {name: 'SUPERGITARA', SALE_SUM: 700},
   GITARA2020: {name: 'GITARA2020', SALE_SUM: 3000, SALE_PERCENT_LIMIT: 30},
 }
+
+export const DISPLAYED_BUTTONS = 3;
